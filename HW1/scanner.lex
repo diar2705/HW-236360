@@ -1,7 +1,8 @@
 %{
 #include <stdio.h>
 #include "output.hpp"
-#include "tokens.hpp"
+void concat(const char* str);
+void escapeCheck(const char* str);
 %}
 
 %option yylineno
@@ -12,11 +13,11 @@ letter ([a-zA-Z])
 id ({letter}({letter}|{digit})*)
 num (0|[1-9]{digit}*)
 quote ([\"])
-word  ([^\*])
-escapeSeq (\\(\|"|n|r|t|0|x[2-6][0-9a-fA-F]|x7[0-9a-eA-E]))
-quote ([\"])
+char  ([^\"\\[:cntrl:]])
+escapeSeq (\\[\\|n|r|t|0|"]|\\x[2-6][0-9a-fA-F]|\\x7[0-9a-eA-E])
+tab (\t)
 
-%x 
+%x STR 
 %%
 (void)      output::printToken(yylineno, tokentype::VOID, yytext);
 (int)       output::printToken(yylineno, tokentype::INT, yytext);
@@ -47,8 +48,15 @@ quote ([\"])
 (\/\/.*)    output::printToken(yylineno, tokentype::COMMENT, yytext);
 {id}        output::printToken(yylineno, tokentype::ID, yytext);
 {num}       output::printToken(yylineno, tokentype::NUM, yytext);
-
-{whitespace}    /* Ignore whitespace */;
-.           printf("Error: Unrecognized character '%s' at line %d\n", yytext, yylineno);
+{quote}  BEGIN(STR);
+<STR>{char}*    concat(yytext);
+<STR>{escapeSeq}    escapeCheck(yytext);
+<STR>{tab}*    concat(yytext); 
+<STR>\\x[^\n\r\t\" ]{1,2}    output::errorUndefinedEscape(yytext + 1);
+<STR>\\.    output::errorUndefinedEscape(yytext + 1);
+<STR><<EOF>>    output::errorUnclosedString();
+<STR>{quote}    BEGIN(INITIAL); return tokentype::STRING;
+{whitespace}    ;/* ignore whitespace */
+.           output::errorUnknownChar(*yytext);
 
 %%
