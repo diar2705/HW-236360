@@ -76,7 +76,7 @@ cd ..
 
 
 #	number of tests:
-numtests=2
+numtests=11
 #	command to execute test:
 command="./hw1.out < t\$i.in >& t\$i.res"
 i="1"

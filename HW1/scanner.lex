@@ -48,6 +48,7 @@ tab (\t)
 (\/\/.*)    output::printToken(yylineno, tokentype::COMMENT, yytext);
 {id}        output::printToken(yylineno, tokentype::ID, yytext);
 {num}       output::printToken(yylineno, tokentype::NUM, yytext);
+({num}+b)   output::printToken(yylineno, tokentype::NUM_B, yytext);
 {quote}  BEGIN(STR);
 <STR>{char}*    concat(yytext);
 <STR>{escapeSeq}    escapeCheck(yytext);
