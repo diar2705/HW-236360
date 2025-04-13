@@ -7,7 +7,7 @@ void escapeCheck(const char* str);
 
 %option yylineno
 %option noyywrap
-whitespace ([ \t\n])
+whitespace ([ \t\r\n])
 digit ([0-9])
 letter ([a-zA-Z])
 id ({letter}({letter}|{digit})*)
