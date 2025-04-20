@@ -7,7 +7,7 @@ testsurl="https://webcourse.cs.technion.ac.il/fc159753hw_236360_202201/hw/WCFile
 tmpdir="selfcheck_tmp"
 if [ ! -f "submission.zip" ]
 	then
-		zip submission.zip hw1.cpp scanner.lex tokens.hpp
+		zip submission.zip main.cpp scanner.lex tokens.hpp output.hpp output.cpp
 		
 fi
 
@@ -43,18 +43,18 @@ fi
 flex scanner.lex &> /dev/null
 if [[ $? != 0 ]] 
 	then
-		echo "Cannot build submission!"
+		echo "Cannot build submission [flex]!"
 		exit
 fi
-g++ -std=c++17 lex.yy.c hw1.cpp -o hw1.out &> /dev/null
+g++ -std=c++17 -o hw1.out *.c *.cpp &> /dev/null
 if [[ $? != 0 ]] 
 	then
-		echo "Cannot build submission!"
+		echo "Cannot build submission! [g++]"
 		exit
 fi
 if [ ! -f hw1.out ]
 	then
-		echo "Cannot build submission!"
+		echo "Cannot build submission! [hw1]"
 		exit
 fi
 
@@ -65,18 +65,20 @@ ENDCOLOR="\e[0m"
 #	number of tests:
 numtests=57
 #	command to execute test:
-command="./hw1.out < ../tests/input/t\$i.in >& ../tests/output/t\$i.out"
+command="./hw1.out < ../Tests/input/t\$i.in >& ../Tests/output/t\$i.out"
 i="1"
 failed=false
-rm -rf ../tests/output &> /dev/null
-mkdir ../tests/output
+rm -rf ../Tests/output &> /dev/null
+mkdir ../Tests/output
 while [ $i -le $numtests ]
 	do
 		eval "$command"
-		diff ../tests/output/t$i.out ../tests/expected/t$i.out &> /dev/null
+		diff ../Tests/output/t$i.out ../Tests/expected/t$i.out &> /dev/null
 		if [[ $? != 0 ]] 
 			then
 				echo -e "${RED}FAILED${ENDCOLOR} test #"$i"!"
+				diff ../Tests/output/t$i.out ../Tests/expected/t$i.out
+				echo ""
 				failed=true
 		fi
 		i=$((i+1))
