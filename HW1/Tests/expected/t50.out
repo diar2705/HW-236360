@@ -6,4 +6,4 @@
 3 LBRACE {
 4 ID print
 4 LPAREN (
-Error unclosed string
+ERROR: unclosed string
