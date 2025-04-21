@@ -74,10 +74,10 @@ for test_input in ../Tests/input/*.in;
 		# Compare the results
 		if diff $test_result $test_output > /dev/null; 
 		then
-			echo -e "Test ${test_name} - ${GREEN}PASSED${NC}"
+			echo -e "Test ${test_name} - ${GREEN}PASSED${ENDCOLOR}"
 			rm $test_result
 		else
-			echo -e "Test ${test_name} - ${RED}FAILED${NC}"
+			echo -e "Test ${test_name} - ${RED}FAILED${ENDCOLOR}"
 			diff $test_result $test_output
 			failed=true
 		fi
