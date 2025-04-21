@@ -18,7 +18,6 @@ void escapeCheck(const char *str){
 
     std::string temp = str;
     if(temp == "\\0"){
-        curr.append(temp);
         EOS = true;
     } else if(temp.substr(0,2) == "\\x"){
         int hex = std::stoi(temp.substr(2), nullptr, 16);

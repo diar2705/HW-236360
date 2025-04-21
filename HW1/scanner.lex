@@ -16,8 +16,8 @@ num          (0|[1-9]{digit}*)
 quote        ([\"])
 char         ([^\"\\[:cntrl:]])
 comp         (==|<|>|<=|>=|!=)
-escapeSeq    (\\[\\|n|r|t|0|"]|\\x[2-6][0-9a-fA-F]|\\x7[0-9a-eA-E])
-falseEsc     (\\x[^\n\r\t\" ]{1,2})
+escapeSeq    (\\[\\|n|r|t|0|"]|\\x[2-6][0-9a-fA-F]|\\x7[0-9a-eA-E]|\\x0[9AD])
+falseEsc     (\\x[^[:space:]"]{1,2})
 tab          (\t)
 
 %x STR
@@ -52,13 +52,14 @@ tab          (\t)
 (\/\/.*)        output::printToken(yylineno, tokentype::COMMENT, yytext);
 {id}            output::printToken(yylineno, tokentype::ID, yytext);
 {num}           output::printToken(yylineno, tokentype::NUM, yytext);
-({num}+b)       output::printToken(yylineno, tokentype::NUM_B, yytext);
+({num}b)       output::printToken(yylineno, tokentype::NUM_B, yytext);
 
 {quote}             BEGIN(STR);
 <STR>{char}*        concat(yytext);
 <STR>{escapeSeq}    escapeCheck(yytext);
 <STR>{tab}*         concat(yytext);
 <STR>{falseEsc}     output::errorUndefinedEscape(yytext + 1);
+<STR>\n		output::errorUnclosedString();
 <STR>\\.            output::errorUndefinedEscape(yytext + 1);
 <STR><<EOF>>        output::errorUnclosedString();
 <STR>{quote}        BEGIN(INITIAL); return tokentype::STRING;
