@@ -1,6 +1,7 @@
 #!/bin/bash
 
 tmpdir="selfcheck_tmp"
+rm submission.zip
 if [ ! -f "submission.zip" ]
 	then
 		zip submission.zip main.cpp scanner.lex tokens.hpp output.hpp output.cpp
