@@ -62,27 +62,30 @@ RED="\e[31m"
 GREEN="\e[32m"
 ENDCOLOR="\e[0m"
 
-#	number of tests:
-numtests=57
-#	command to execute test:
-command="./hw1.out < ../Tests/input/t\$i.in >& ../Tests/output/t\$i.out"
-i="1"
+
 failed=false
 rm -rf ../Tests/output &> /dev/null
 mkdir ../Tests/output
-while [ $i -le $numtests ]
+for test_input in Tests/input/*.in; 
 	do
-		eval "$command"
-		diff ../Tests/output/t$i.out ../Tests/expected/t$i.out &> /dev/null
-		if [[ $? != 0 ]] 
-			then
-				echo -e "${RED}FAILED${ENDCOLOR} test #"$i"!"
-				diff ../Tests/output/t$i.out ../Tests/expected/t$i.out
-				echo ""
-				failed=true
+		test_name=$(basename "$test_input" .in)
+		test_output="Tests/expected/$test_name.out"
+		test_result="Tests/outputs/$test_name.res"
+
+		# Run the test
+		./hw1 < "$test_input" > "$test_result"
+		
+		# Compare the results
+		if diff $test_result $test_output > /dev/null; 
+		then
+			echo -e "Test ${test_name} - ${GREEN}PASSED${NC}"
+			rm $test_result
+		else
+			echo -e "Test ${test_name} - ${RED}FAILED${NC}"
+			diff $test_result $test_output
+			failed=true
 		fi
-		i=$((i+1))
-done
+	done
 
 if $failed ; then
 	cd - &> /dev/null
