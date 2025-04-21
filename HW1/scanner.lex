@@ -60,6 +60,7 @@ tab          (\t)
 <STR>{tab}*         concat(yytext);
 <STR>{falseEsc}     output::errorUndefinedEscape(yytext + 1);
 <STR>\\.            output::errorUndefinedEscape(yytext + 1);
+<STR>\n             output::errorUnclosedString();
 <STR><<EOF>>        output::errorUnclosedString();
 <STR>{quote}        BEGIN(INITIAL); return tokentype::STRING;
 

@@ -1,0 +1,4 @@
+1 COMMENT //
+2 RETURN return
+3 BINOP +
+ERROR: Undefined escape sequence x03

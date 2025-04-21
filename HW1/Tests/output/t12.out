@@ -1,0 +1,12 @@
+1 ID Gf34Y
+2 BINOP /
+3 OR or
+3 NUM 35009
+3 ASSIGN =
+4 CONTINUE continue
+4 STRING hX1$8As8\"R4|D
+5 LPAREN (
+5 NUM 4274
+6 NUM 515
+7 ID FvBzLs
+ERROR: Undefined escape sequence x06
