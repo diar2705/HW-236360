@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# change these per each homework
-#	link to tests:
-testsurl="https://webcourse.cs.technion.ac.il/fc159753hw_236360_202201/hw/WCFiles/hw1-tests.zip"
-
 tmpdir="selfcheck_tmp"
 if [ ! -f "submission.zip" ]
 	then
@@ -46,13 +42,13 @@ if [[ $? != 0 ]]
 		echo "Cannot build submission [flex]!"
 		exit
 fi
-g++ -std=c++17 -o hw1.out *.c *.cpp &> /dev/null
+g++ -std=c++17 -o hw1 *.c *.cpp &> /dev/null
 if [[ $? != 0 ]] 
 	then
 		echo "Cannot build submission! [g++]"
 		exit
 fi
-if [ ! -f hw1.out ]
+if [ ! -f hw1 ]
 	then
 		echo "Cannot build submission! [hw1]"
 		exit
@@ -66,11 +62,11 @@ ENDCOLOR="\e[0m"
 failed=false
 rm -rf ../Tests/output &> /dev/null
 mkdir ../Tests/output
-for test_input in Tests/input/*.in; 
+for test_input in ../Tests/input/*.in; 
 	do
 		test_name=$(basename "$test_input" .in)
-		test_output="Tests/expected/$test_name.out"
-		test_result="Tests/outputs/$test_name.res"
+		test_output="../Tests/expected/$test_name.out"
+		test_result="../Tests/output/$test_name.res"
 
 		# Run the test
 		./hw1 < "$test_input" > "$test_result"
