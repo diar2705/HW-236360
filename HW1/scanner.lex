@@ -17,7 +17,7 @@ quote        ([\"])
 char         ([^\"\\[:cntrl:]])
 comp         (==|<|>|<=|>=|!=)
 escapeSeq    (\\[\\|n|r|t|0|"]|\\x[2-6][0-9a-fA-F]|\\x7[0-9a-eA-E]|\\x0[9AD])
-falseEsc     (\\x[^[:space:]"]{1,2})
+falseEsc     (\\x[^\t\r\n"]{1,2})
 tab          (\t)
 
 %x STR
