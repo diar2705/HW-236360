@@ -1,0 +1,6 @@
+int main()
+{
+	int arr[3];
+	x = arr[2];
+	arr[2] = 6;
+}

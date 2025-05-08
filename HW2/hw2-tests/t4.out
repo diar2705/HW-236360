@@ -1,0 +1,20 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: main
+        ├──PrimitiveType: int
+        ├──Formals
+        └──Statements
+            ├──VarDecl
+            │   ├──ID: arr
+            │   └──ArrayType: int[
+            │       ├──Num: 3
+            │       ├──]
+            ├──Assign
+            │   ├──ID: x
+            │   └──ArrayDereference
+            │       ├──ID: arr
+            │       └──Num: 2
+            └──ArrayAssign
+                ├──ID: arr
+                ├──Num: 2
+                └──Num: 2
