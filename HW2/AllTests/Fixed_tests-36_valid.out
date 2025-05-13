@@ -1,12 +1,12 @@
 └──Funcs
     └──FuncDecl
         ├──ID: main
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         └──Statements
             └──VarDecl
                 ├──ID: result
-                ├──Type: int
+                ├──PrimitiveType: int
                 └──Call
                     ├──ID: sum
                     └──ExpList

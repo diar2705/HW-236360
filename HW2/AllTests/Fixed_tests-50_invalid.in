@@ -28,7 +28,7 @@ void uniqueTestSuite(int alpha, int beta, int gamma, byte delta, byte epsilon, b
     uniqueNestedFunctionTests(alpha, beta, gamma, delta, epsilon); // Nested function calls
     uniqueConditionalTests(alpha, beta, gamma); // Conditionals
     uniqueComplexCallTests(alpha, beta, gamma); // Complex calls
-    uniqueTypeCastingTests(); // Type casting
+    uniqueTypeCastingTests(); // PrimitiveType casting
     uniqueLongConditionalTests(omega, sigma, alpha, beta, gamma); // Long conditionals
 }
 
@@ -157,7 +157,7 @@ void uniqueComplexCallTests(int alpha, int beta, int gamma) {
     }
 }
 
-// Type casting tests with unique variables
+// PrimitiveType casting tests with unique variables
 void uniqueTypeCastingTests() {
     byte byteVar = 5b; // Byte variable for casting
     int iter = 0; // Iterator

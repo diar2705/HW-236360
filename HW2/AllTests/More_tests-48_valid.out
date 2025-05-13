@@ -1,20 +1,20 @@
 └──Funcs
     ├──FuncDecl
     │   ├──ID: main
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: x
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 10
     │       ├──VarDecl
     │       │   ├──ID: b
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 1010
     │       ├──VarDecl
     │       │   ├──ID: y
-    │       │   └──Type: int
+    │       │   └──PrimitiveType: int
     │       ├──Assign
     │       │   ├──ID: y
     │       │   └──BinOp: +
@@ -22,12 +22,12 @@
     │       │       └──Num: 5
     │       ├──VarDecl
     │       │   ├──ID: z
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──Cast
     │       │       ├──BinOp: *
     │       │       │   ├──ID: x
     │       │       │   └──Num: 2
-    │       │       └──Type: byte
+    │       │       └──PrimitiveType: byte
     │       ├──If
     │       │   ├──RelOp: >
     │       │   │   ├──ID: y
@@ -122,7 +122,7 @@
     │       │       └──ID: x
     │       ├──VarDecl
     │       │   ├──ID: sum
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Call
     │       │       ├──ID: add
     │       │       └──ExpList
@@ -132,14 +132,14 @@
     │           └──ID: sum
     ├──FuncDecl
     │   ├──ID: add
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──Return
     │           └──BinOp: +
@@ -147,14 +147,14 @@
     │               └──ID: b
     ├──FuncDecl
     │   ├──ID: multiply
-    │   ├──Type: byte
+    │   ├──PrimitiveType: byte
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: byte
+    │   │   │   └──PrimitiveType: byte
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: byte
+    │   │       └──PrimitiveType: byte
     │   └──Statements
     │       └──Return
     │           └──BinOp: *
@@ -162,14 +162,14 @@
     │               └──ID: b
     ├──FuncDecl
     │   ├──ID: isGreater
-    │   ├──Type: bool
+    │   ├──PrimitiveType: bool
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──Return
     │           └──RelOp: >
@@ -177,14 +177,14 @@
     │               └──ID: b
     ├──FuncDecl
     │   ├──ID: printResult
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──Call
     │       │   ├──ID: print
@@ -198,29 +198,29 @@
     │                   └──ID: b
     ├──FuncDecl
     │   ├──ID: castExample
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: b
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 11110
     │       └──Return
     │           └──Cast
     │               ├──ID: b
-    │               └──Type: int
+    │               └──PrimitiveType: int
     ├──FuncDecl
     │   ├──ID: logicalOperations
-    │   ├──Type: bool
+    │   ├──PrimitiveType: bool
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: a
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 10
     │       ├──VarDecl
     │       │   ├──ID: b
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 20
     │       └──Return
     │           └──And
@@ -233,22 +233,22 @@
     │                       └──ID: b
     ├──FuncDecl
     │   ├──ID: complexExpressions
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: a
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 5
     │       ├──VarDecl
     │       │   ├──ID: b
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──BinOp: *
     │       │       ├──Cast
     │       │       │   ├──BinOp: +
     │       │       │   │   ├──ID: a
     │       │       │   │   └──Num: 10
-    │       │       │   └──Type: int
+    │       │       │   └──PrimitiveType: int
     │       │       └──BinOp: -
     │       │           ├──ID: a
     │       │           └──Num: 1
@@ -256,16 +256,16 @@
     │           └──ID: b
     ├──FuncDecl
     │   ├──ID: nestedLoops
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       ├──VarDecl
     │       │   ├──ID: j
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -298,16 +298,16 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: testBooleans
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: a
-    │       │   ├──Type: bool
+    │       │   ├──PrimitiveType: bool
     │       │   └──Bool: true
     │       ├──VarDecl
     │       │   ├──ID: b
-    │       │   ├──Type: bool
+    │       │   ├──PrimitiveType: bool
     │       │   └──Bool: false
     │       └──If
     │           ├──Or
@@ -325,7 +325,7 @@
     │                       └──String: Both are false
     └──FuncDecl
         ├──ID: doNothing
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             └──Return

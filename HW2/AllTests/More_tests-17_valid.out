@@ -1,12 +1,12 @@
 └──Funcs
     └──FuncDecl
         ├──ID: updateVar
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             ├──VarDecl
             │   ├──ID: x
-            │   └──Type: int
+            │   └──PrimitiveType: int
             └──Assign
                 ├──ID: x
                 └──Num: 5

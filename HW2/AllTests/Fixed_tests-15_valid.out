@@ -1,9 +1,9 @@
 └──Funcs
     └──FuncDecl
         ├──ID: declareVar
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             └──VarDecl
                 ├──ID: x
-                └──Type: int
+                └──PrimitiveType: int

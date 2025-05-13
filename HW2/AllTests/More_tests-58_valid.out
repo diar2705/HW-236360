@@ -1,12 +1,12 @@
 └──Funcs
     └──FuncDecl
         ├──ID: main
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             ├──VarDecl
             │   ├──ID: var0
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──And
             │       ├──Or
             │       │   ├──RelOp: >=
@@ -26,7 +26,7 @@
             │               └──NumB: 57
             ├──VarDecl
             │   ├──ID: var1
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Not
             │       │   └──RelOp: <
@@ -53,7 +53,7 @@
             │                       └──NumB: 79
             ├──VarDecl
             │   ├──ID: var2
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Not
@@ -75,7 +75,7 @@
             │               └──NumB: 32
             ├──VarDecl
             │   ├──ID: var3
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Not
             │       │   └──RelOp: >=
@@ -131,7 +131,7 @@
             │                       └──NumB: 1
             ├──VarDecl
             │   ├──ID: var4
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -183,7 +183,7 @@
             │               └──NumB: 40
             ├──VarDecl
             │   ├──ID: var5
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -245,7 +245,7 @@
             │               └──Num: 78
             ├──VarDecl
             │   ├──ID: var6
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Not
@@ -300,7 +300,7 @@
             │               └──Num: 85
             ├──VarDecl
             │   ├──ID: var7
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -387,7 +387,7 @@
             │                           └──Num: 7
             ├──VarDecl
             │   ├──ID: var8
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -465,7 +465,7 @@
             │               └──NumB: 78
             ├──VarDecl
             │   ├──ID: var9
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -584,7 +584,7 @@
             │                   └──Num: 33
             ├──VarDecl
             │   ├──ID: var10
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -698,7 +698,7 @@
             │                       └──Num: 63
             ├──VarDecl
             │   ├──ID: var11
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -835,7 +835,7 @@
             │                   └──NumB: 28
             ├──VarDecl
             │   ├──ID: var12
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -948,7 +948,7 @@
             │               └──Num: 69
             ├──VarDecl
             │   ├──ID: var13
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -1096,7 +1096,7 @@
             │                       └──NumB: 29
             ├──VarDecl
             │   ├──ID: var14
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -1208,7 +1208,7 @@
             │                   └──Num: 53
             ├──VarDecl
             │   ├──ID: var15
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -1341,7 +1341,7 @@
             │                   └──Num: 50
             ├──VarDecl
             │   ├──ID: var16
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -1464,7 +1464,7 @@
             │               └──Num: 65
             ├──VarDecl
             │   ├──ID: var17
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -1587,7 +1587,7 @@
             │               └──Num: 41
             ├──VarDecl
             │   ├──ID: var18
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -1710,7 +1710,7 @@
             │               └──NumB: 16
             ├──VarDecl
             │   ├──ID: var19
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -1821,7 +1821,7 @@
             │                   └──Num: 89
             ├──VarDecl
             │   ├──ID: var20
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -1926,7 +1926,7 @@
             │                   └──Num: 3
             ├──VarDecl
             │   ├──ID: var21
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -2020,7 +2020,7 @@
             │                       └──Num: 23
             ├──VarDecl
             │   ├──ID: var22
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -2138,7 +2138,7 @@
             │                   └──Num: 6
             ├──VarDecl
             │   ├──ID: var23
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -2271,7 +2271,7 @@
             │               └──NumB: 6
             ├──VarDecl
             │   ├──ID: var24
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -2393,7 +2393,7 @@
             │               └──NumB: 3
             ├──VarDecl
             │   ├──ID: var25
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -2530,7 +2530,7 @@
             │               └──NumB: 98
             ├──VarDecl
             │   ├──ID: var26
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -2652,7 +2652,7 @@
             │                   └──NumB: 73
             ├──VarDecl
             │   ├──ID: var27
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -2784,7 +2784,7 @@
             │               └──NumB: 92
             ├──VarDecl
             │   ├──ID: var28
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -2900,7 +2900,7 @@
             │               └──Num: 45
             ├──VarDecl
             │   ├──ID: var29
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -3078,7 +3078,7 @@
             │                           └──Num: 15
             ├──VarDecl
             │   ├──ID: var30
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -3196,7 +3196,7 @@
             │                   └──NumB: 82
             ├──VarDecl
             │   ├──ID: var31
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -3313,7 +3313,7 @@
             │                   └──NumB: 15
             ├──VarDecl
             │   ├──ID: var32
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -3436,7 +3436,7 @@
             │                   └──NumB: 21
             ├──VarDecl
             │   ├──ID: var33
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -3555,7 +3555,7 @@
             │                   └──Num: 70
             ├──VarDecl
             │   ├──ID: var34
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -3677,7 +3677,7 @@
             │                   └──Num: 28
             ├──VarDecl
             │   ├──ID: var35
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -3795,7 +3795,7 @@
             │               └──NumB: 25
             ├──VarDecl
             │   ├──ID: var36
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -3935,7 +3935,7 @@
             │               └──NumB: 57
             ├──VarDecl
             │   ├──ID: var37
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -4051,7 +4051,7 @@
             │               └──NumB: 31
             ├──VarDecl
             │   ├──ID: var38
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -4166,7 +4166,7 @@
             │                   └──NumB: 49
             ├──VarDecl
             │   ├──ID: var39
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -4294,7 +4294,7 @@
             │                   └──NumB: 60
             ├──VarDecl
             │   ├──ID: var40
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -4413,7 +4413,7 @@
             │               └──Num: 40
             ├──VarDecl
             │   ├──ID: var41
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -4532,7 +4532,7 @@
             │               └──NumB: 64
             ├──VarDecl
             │   ├──ID: var42
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -4652,7 +4652,7 @@
             │               └──Num: 31
             ├──VarDecl
             │   ├──ID: var43
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -4768,7 +4768,7 @@
             │               └──Num: 70
             ├──VarDecl
             │   ├──ID: var44
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -4912,7 +4912,7 @@
             │               └──Num: 22
             ├──VarDecl
             │   ├──ID: var45
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -5042,7 +5042,7 @@
             │                   └──Num: 70
             ├──VarDecl
             │   ├──ID: var46
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -5165,7 +5165,7 @@
             │                       └──NumB: 51
             ├──VarDecl
             │   ├──ID: var47
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -5262,7 +5262,7 @@
             │               └──NumB: 65
             ├──VarDecl
             │   ├──ID: var48
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -5385,7 +5385,7 @@
             │               └──NumB: 5
             ├──VarDecl
             │   ├──ID: var49
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -5498,7 +5498,7 @@
             │                   └──Num: 61
             ├──VarDecl
             │   ├──ID: var50
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -5617,7 +5617,7 @@
             │                       └──NumB: 15
             ├──VarDecl
             │   ├──ID: var51
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -5723,7 +5723,7 @@
             │                   └──Num: 35
             ├──VarDecl
             │   ├──ID: var52
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -5844,7 +5844,7 @@
             │                   └──NumB: 81
             ├──VarDecl
             │   ├──ID: var53
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -5953,7 +5953,7 @@
             │               └──Num: 76
             ├──VarDecl
             │   ├──ID: var54
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -6075,7 +6075,7 @@
             │                   └──Num: 46
             ├──VarDecl
             │   ├──ID: var55
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -6194,7 +6194,7 @@
             │                   └──NumB: 93
             ├──VarDecl
             │   ├──ID: var56
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -6301,7 +6301,7 @@
             │                   └──NumB: 56
             ├──VarDecl
             │   ├──ID: var57
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -6442,7 +6442,7 @@
             │                       └──Num: 71
             ├──VarDecl
             │   ├──ID: var58
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -6572,7 +6572,7 @@
             │               └──Num: 61
             ├──VarDecl
             │   ├──ID: var59
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -6691,7 +6691,7 @@
             │                       └──Num: 24
             ├──VarDecl
             │   ├──ID: var60
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -6823,7 +6823,7 @@
             │                       └──NumB: 58
             ├──VarDecl
             │   ├──ID: var61
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -6948,7 +6948,7 @@
             │                   └──NumB: 47
             ├──VarDecl
             │   ├──ID: var62
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -7072,7 +7072,7 @@
             │                           └──NumB: 78
             ├──VarDecl
             │   ├──ID: var63
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -7209,7 +7209,7 @@
             │                               └──Num: 18
             ├──VarDecl
             │   ├──ID: var64
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -7317,7 +7317,7 @@
             │                   └──NumB: 34
             ├──VarDecl
             │   ├──ID: var65
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -7445,7 +7445,7 @@
             │                   └──Num: 92
             ├──VarDecl
             │   ├──ID: var66
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -7558,7 +7558,7 @@
             │                   └──Num: 10
             ├──VarDecl
             │   ├──ID: var67
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -7687,7 +7687,7 @@
             │                   └──Num: 73
             ├──VarDecl
             │   ├──ID: var68
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -7819,7 +7819,7 @@
             │                   └──Num: 56
             ├──VarDecl
             │   ├──ID: var69
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -7938,7 +7938,7 @@
             │                   └──Num: 82
             ├──VarDecl
             │   ├──ID: var70
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -8053,7 +8053,7 @@
             │               └──NumB: 65
             ├──VarDecl
             │   ├──ID: var71
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -8167,7 +8167,7 @@
             │               └──NumB: 26
             ├──VarDecl
             │   ├──ID: var72
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -8271,7 +8271,7 @@
             │               └──NumB: 67
             ├──VarDecl
             │   ├──ID: var73
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -8410,7 +8410,7 @@
             │                       └──NumB: 34
             ├──VarDecl
             │   ├──ID: var74
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -8514,7 +8514,7 @@
             │               └──NumB: 92
             ├──VarDecl
             │   ├──ID: var75
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -8628,7 +8628,7 @@
             │                   └──NumB: 4
             ├──VarDecl
             │   ├──ID: var76
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -8756,7 +8756,7 @@
             │                   └──NumB: 18
             ├──VarDecl
             │   ├──ID: var77
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -8855,7 +8855,7 @@
             │                   └──Num: 19
             ├──VarDecl
             │   ├──ID: var78
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -8959,7 +8959,7 @@
             │                   └──NumB: 52
             ├──VarDecl
             │   ├──ID: var79
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -9070,7 +9070,7 @@
             │                   └──NumB: 52
             ├──VarDecl
             │   ├──ID: var80
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──RelOp: >
@@ -9208,7 +9208,7 @@
             │                   └──NumB: 81
             ├──VarDecl
             │   ├──ID: var81
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -9321,7 +9321,7 @@
             │                   └──NumB: 76
             ├──VarDecl
             │   ├──ID: var82
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -9447,7 +9447,7 @@
             │               └──NumB: 90
             ├──VarDecl
             │   ├──ID: var83
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -9566,7 +9566,7 @@
             │                   └──NumB: 58
             ├──VarDecl
             │   ├──ID: var84
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -9720,7 +9720,7 @@
             │               └──Num: 18
             ├──VarDecl
             │   ├──ID: var85
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -9850,7 +9850,7 @@
             │                   └──NumB: 28
             ├──VarDecl
             │   ├──ID: var86
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -9955,7 +9955,7 @@
             │                   └──Num: 77
             ├──VarDecl
             │   ├──ID: var87
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -10084,7 +10084,7 @@
             │                   └──Num: 38
             ├──VarDecl
             │   ├──ID: var88
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -10210,7 +10210,7 @@
             │                   └──Num: 72
             ├──VarDecl
             │   ├──ID: var89
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -10321,7 +10321,7 @@
             │                   └──Num: 24
             ├──VarDecl
             │   ├──ID: var90
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -10438,7 +10438,7 @@
             │                   └──Num: 49
             ├──VarDecl
             │   ├──ID: var91
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──And
@@ -10543,7 +10543,7 @@
             │                   └──Num: 9
             ├──VarDecl
             │   ├──ID: var92
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -10659,7 +10659,7 @@
             │                       └──Num: 31
             ├──VarDecl
             │   ├──ID: var93
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -10794,7 +10794,7 @@
             │                   └──NumB: 64
             ├──VarDecl
             │   ├──ID: var94
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -10906,7 +10906,7 @@
             │                   └──Num: 56
             ├──VarDecl
             │   ├──ID: var95
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -11033,7 +11033,7 @@
             │               └──Num: 22
             ├──VarDecl
             │   ├──ID: var96
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -11151,7 +11151,7 @@
             │                   └──Num: 47
             ├──VarDecl
             │   ├──ID: var97
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -11257,7 +11257,7 @@
             │                   └──NumB: 35
             ├──VarDecl
             │   ├──ID: var98
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──Or
             │       ├──Or
             │       │   ├──Or
@@ -11379,7 +11379,7 @@
             │                   └──NumB: 14
             └──VarDecl
                 ├──ID: var99
-                ├──Type: bool
+                ├──PrimitiveType: bool
                 └──Or
                     ├──Or
                     │   ├──And

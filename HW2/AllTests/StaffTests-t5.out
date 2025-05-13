@@ -1,7 +1,7 @@
 └──Funcs
     └──FuncDecl
         ├──ID: main
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             └──Call

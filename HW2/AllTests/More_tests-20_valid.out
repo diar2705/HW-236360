@@ -1,7 +1,7 @@
 └──Funcs
     └──FuncDecl
         ├──ID: getValue
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         └──Statements
             └──Return

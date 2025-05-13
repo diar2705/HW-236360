@@ -1,10 +1,10 @@
 └──Funcs
     └──FuncDecl
         ├──ID: main
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         └──Statements
             └──VarDecl
                 ├──ID: x
-                ├──Type: int
+                ├──PrimitiveType: int
                 └──Num: 5

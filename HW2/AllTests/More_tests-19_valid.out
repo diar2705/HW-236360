@@ -1,7 +1,7 @@
 └──Funcs
     └──FuncDecl
         ├──ID: noReturn
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             └──Return

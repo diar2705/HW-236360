@@ -1,11 +1,11 @@
 └──Funcs
     └──FuncDecl
         ├──ID: doubleValue
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         │   └──Formal
         │       ├──ID: x
-        │       └──Type: int
+        │       └──PrimitiveType: int
         └──Statements
             └──Return
                 └──BinOp: *

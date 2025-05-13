@@ -1,17 +1,17 @@
 └──Funcs
     └──FuncDecl
         ├──ID: sumThree
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         │   ├──Formal
         │   │   ├──ID: c
-        │   │   └──Type: int
+        │   │   └──PrimitiveType: int
         │   ├──Formal
         │   │   ├──ID: b
-        │   │   └──Type: int
+        │   │   └──PrimitiveType: int
         │   └──Formal
         │       ├──ID: a
-        │       └──Type: int
+        │       └──PrimitiveType: int
         └──Statements
             └──Return
                 └──BinOp: +

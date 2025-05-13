@@ -1,7 +1,7 @@
 └──Funcs
     ├──FuncDecl
     │   ├──ID: main
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   └──Statements
     │       ├──Call
@@ -10,31 +10,31 @@
     │       │       └──String: Starting the ultimate FanC test...
     │       ├──VarDecl
     │       │   ├──ID: x
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 10
     │       ├──VarDecl
     │       │   ├──ID: y
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 20
     │       ├──VarDecl
     │       │   ├──ID: z
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 30
     │       ├──VarDecl
     │       │   ├──ID: b1
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 1
     │       ├──VarDecl
     │       │   ├──ID: b2
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 4
     │       ├──VarDecl
     │       │   ├──ID: flag1
-    │       │   ├──Type: bool
+    │       │   ├──PrimitiveType: bool
     │       │   └──Bool: true
     │       ├──VarDecl
     │       │   ├──ID: flag2
-    │       │   ├──Type: bool
+    │       │   ├──PrimitiveType: bool
     │       │   └──Bool: false
     │       ├──Call
     │       │   ├──ID: fullTestSuite
@@ -56,29 +56,29 @@
     │           └──Num: 0
     ├──FuncDecl
     │   ├──ID: fullTestSuite
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: flag2
-    │   │   │   └──Type: bool
+    │   │   │   └──PrimitiveType: bool
     │   │   ├──Formal
     │   │   │   ├──ID: flag1
-    │   │   │   └──Type: bool
+    │   │   │   └──PrimitiveType: bool
     │   │   ├──Formal
     │   │   │   ├──ID: b2
-    │   │   │   └──Type: byte
+    │   │   │   └──PrimitiveType: byte
     │   │   ├──Formal
     │   │   │   ├──ID: b1
-    │   │   │   └──Type: byte
+    │   │   │   └──PrimitiveType: byte
     │   │   ├──Formal
     │   │   │   ├──ID: z
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: x
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──Call
     │       │   ├──ID: testArithmetic
@@ -138,27 +138,27 @@
     │               └──ID: flag1
     ├──FuncDecl
     │   ├──ID: testArithmetic
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: b2
-    │   │   │   └──Type: byte
+    │   │   │   └──PrimitiveType: byte
     │   │   ├──Formal
     │   │   │   ├──ID: b1
-    │   │   │   └──Type: byte
+    │   │   │   └──PrimitiveType: byte
     │   │   ├──Formal
     │   │   │   ├──ID: z
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: x
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -167,7 +167,7 @@
     │           └──Statements
     │               ├──VarDecl
     │               │   ├──ID: result
-    │               │   ├──Type: int
+    │               │   ├──PrimitiveType: int
     │               │   └──BinOp: -
     │               │       ├──BinOp: +
     │               │       │   ├──BinOp: -
@@ -219,24 +219,24 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: testLogical
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: x
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: flag2
-    │   │   │   └──Type: bool
+    │   │   │   └──PrimitiveType: bool
     │   │   └──Formal
     │   │       ├──ID: flag1
-    │   │       └──Type: bool
+    │   │       └──PrimitiveType: bool
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -275,21 +275,21 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: testLoops
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: z
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: x
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -298,7 +298,7 @@
     │           └──Statements
     │               ├──VarDecl
     │               │   ├──ID: j
-    │               │   ├──Type: int
+    │               │   ├──PrimitiveType: int
     │               │   └──Num: 0
     │               ├──While
     │               │   ├──RelOp: <
@@ -307,7 +307,7 @@
     │               │   └──Statements
     │               │       ├──VarDecl
     │               │       │   ├──ID: temp
-    │               │       │   ├──Type: int
+    │               │       │   ├──PrimitiveType: int
     │               │       │   └──BinOp: /
     │               │       │       ├──BinOp: +
     │               │       │       │   ├──BinOp: *
@@ -335,11 +335,11 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: recursiveFactorial
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   └──Formal
     │   │       ├──ID: n
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──If
     │       │   ├──RelOp: <=
@@ -358,11 +358,11 @@
     │                           └──Num: 1
     ├──FuncDecl
     │   ├──ID: recursiveFibonacci
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   └──Formal
     │   │       ├──ID: n
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──If
     │       │   ├──RelOp: <=
@@ -386,15 +386,15 @@
     │                           └──Num: 2
     ├──FuncDecl
     │   ├──ID: testRecursion
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   └──Formal
     │   │       ├──ID: n
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -403,14 +403,14 @@
     │           └──Statements
     │               ├──VarDecl
     │               │   ├──ID: fact
-    │               │   ├──Type: int
+    │               │   ├──PrimitiveType: int
     │               │   └──Call
     │               │       ├──ID: recursiveFactorial
     │               │       └──ExpList
     │               │           └──ID: i
     │               ├──VarDecl
     │               │   ├──ID: fib
-    │               │   ├──Type: int
+    │               │   ├──PrimitiveType: int
     │               │   └──Call
     │               │       ├──ID: recursiveFibonacci
     │               │       └──ExpList
@@ -436,14 +436,14 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: nestedFunctionOne
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──Return
     │           └──Call
@@ -457,14 +457,14 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: nestedFunctionTwo
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: x
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──Return
     │           └──Call
@@ -478,14 +478,14 @@
     │                       └──ID: y
     ├──FuncDecl
     │   ├──ID: nestedFunctionThree
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: n
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: m
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──If
     │       │   ├──RelOp: >
@@ -507,27 +507,27 @@
     │                       └──ID: m
     ├──FuncDecl
     │   ├──ID: testNestedFunctions
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: b2
-    │   │   │   └──Type: byte
+    │   │   │   └──PrimitiveType: byte
     │   │   ├──Formal
     │   │   │   ├──ID: b1
-    │   │   │   └──Type: byte
+    │   │   │   └──PrimitiveType: byte
     │   │   ├──Formal
     │   │   │   ├──ID: z
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: x
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -536,7 +536,7 @@
     │           └──Statements
     │               ├──VarDecl
     │               │   ├──ID: result
-    │               │   ├──Type: int
+    │               │   ├──PrimitiveType: int
     │               │   └──BinOp: +
     │               │       ├──BinOp: +
     │               │       │   ├──Call
@@ -569,21 +569,21 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: testAdvancedConditionals
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: z
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: x
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -659,17 +659,17 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: complexCall
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: c
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──Return
     │           └──BinOp: +
@@ -693,21 +693,21 @@
     │                       └──ID: c
     ├──FuncDecl
     │   ├──ID: testComplexCalls
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: z
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: x
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -716,7 +716,7 @@
     │           └──Statements
     │               ├──VarDecl
     │               │   ├──ID: result
-    │               │   ├──Type: int
+    │               │   ├──PrimitiveType: int
     │               │   └──Call
     │               │       ├──ID: complexCall
     │               │       └──ExpList
@@ -757,16 +757,16 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: testTypeCasting
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: b
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 2
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -775,11 +775,11 @@
     │           └──Statements
     │               ├──VarDecl
     │               │   ├──ID: x
-    │               │   ├──Type: int
+    │               │   ├──PrimitiveType: int
     │               │   └──BinOp: +
     │               │       ├──Cast
     │               │       │   ├──ID: b
-    │               │       │   └──Type: int
+    │               │       │   └──PrimitiveType: int
     │               │       └──ID: i
     │               ├──Call
     │               │   ├──ID: printResult
@@ -792,27 +792,27 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: testLongConditionals
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: z
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: x
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: flag2
-    │   │   │   └──Type: bool
+    │   │   │   └──PrimitiveType: bool
     │   │   └──Formal
     │   │       ├──ID: flag1
-    │   │       └──Type: bool
+    │   │       └──PrimitiveType: bool
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -863,21 +863,21 @@
     │                       └──Num: 1
     └──FuncDecl
         ├──ID: extendedTests
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         │   ├──Formal
         │   │   ├──ID: z
-        │   │   └──Type: int
+        │   │   └──PrimitiveType: int
         │   ├──Formal
         │   │   ├──ID: y
-        │   │   └──Type: int
+        │   │   └──PrimitiveType: int
         │   └──Formal
         │       ├──ID: x
-        │       └──Type: int
+        │       └──PrimitiveType: int
         └──Statements
             ├──VarDecl
             │   ├──ID: i
-            │   ├──Type: int
+            │   ├──PrimitiveType: int
             │   └──Num: 0
             └──While
                 ├──RelOp: <

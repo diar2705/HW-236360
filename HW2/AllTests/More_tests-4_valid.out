@@ -1,14 +1,14 @@
 └──Funcs
     └──FuncDecl
         ├──ID: multiply
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         │   ├──Formal
         │   │   ├──ID: y
-        │   │   └──Type: int
+        │   │   └──PrimitiveType: int
         │   └──Formal
         │       ├──ID: x
-        │       └──Type: int
+        │       └──PrimitiveType: int
         └──Statements
             └──Return
                 └──BinOp: *

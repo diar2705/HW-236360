@@ -1,7 +1,7 @@
 └──Funcs
     └──FuncDecl
         ├──ID: breakTest
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             └──While

@@ -1,7 +1,7 @@
 └──Funcs
     └──FuncDecl
         ├──ID: printMessage
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             └──Call

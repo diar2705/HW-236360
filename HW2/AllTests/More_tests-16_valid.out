@@ -1,10 +1,10 @@
 └──Funcs
     └──FuncDecl
         ├──ID: assignVar
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             └──VarDecl
                 ├──ID: x
-                ├──Type: int
+                ├──PrimitiveType: int
                 └──Num: 10

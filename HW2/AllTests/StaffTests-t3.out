@@ -1,12 +1,12 @@
 └──Funcs
     ├──FuncDecl
     │   ├──ID: main
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: x
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──BinOp: *
     │       │       ├──BinOp: +
     │       │       │   ├──Num: 4
@@ -14,7 +14,7 @@
     │       │       └──Num: 12
     │       ├──VarDecl
     │       │   ├──ID: y
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 1
     │       ├──Call
     │       │   ├──ID: intFun
@@ -27,33 +27,33 @@
     │       │           └──ID: y
     │       └──VarDecl
     │           ├──ID: z
-    │           └──Type: int
+    │           └──PrimitiveType: int
     └──FuncDecl
         ├──ID: intFun
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         │   ├──Formal
         │   │   ├──ID: e
-        │   │   └──Type: byte
+        │   │   └──PrimitiveType: byte
         │   ├──Formal
         │   │   ├──ID: d
-        │   │   └──Type: int
+        │   │   └──PrimitiveType: int
         │   ├──Formal
         │   │   ├──ID: c
-        │   │   └──Type: int
+        │   │   └──PrimitiveType: int
         │   └──Formal
         │       ├──ID: a
-        │       └──Type: bool
+        │       └──PrimitiveType: bool
         └──Statements
             ├──VarDecl
             │   ├──ID: tmp
-            │   ├──Type: int
+            │   ├──PrimitiveType: int
             │   └──BinOp: +
             │       ├──ID: c
             │       └──ID: e
             ├──VarDecl
             │   ├──ID: b
-            │   ├──Type: bool
+            │   ├──PrimitiveType: bool
             │   └──ID: a
             ├──If
             │   ├──And
@@ -64,7 +64,7 @@
             │   └──Statements
             │       └──VarDecl
             │           ├──ID: j
-            │           ├──Type: byte
+            │           ├──PrimitiveType: byte
             │           └──ID: e
             └──Return
                 └──ID: tmp

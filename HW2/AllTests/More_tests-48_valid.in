@@ -84,7 +84,7 @@ void printResult(int a, int b) {
     print(a + b);
 }
 
-// Type casting example
+// PrimitiveType casting example
 int castExample() {
     byte b = 11110b;
     return (int) b;

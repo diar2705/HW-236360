@@ -1,7 +1,7 @@
 └──Funcs
     └──FuncDecl
         ├──ID: main
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         └──Statements
             └──Return

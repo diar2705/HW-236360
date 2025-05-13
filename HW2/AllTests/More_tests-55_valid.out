@@ -1,7 +1,7 @@
 └──Funcs
     ├──FuncDecl
     │   ├──ID: func
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   └──Statements
     │       └──While
@@ -11,7 +11,7 @@
     │           └──Statements
     │               ├──VarDecl
     │               │   ├──ID: x
-    │               │   ├──Type: int
+    │               │   ├──PrimitiveType: int
     │               │   └──Num: 12
     │               ├──If
     │               │   ├──RelOp: >
@@ -20,7 +20,7 @@
     │               │   └──Break
     │               ├──VarDecl
     │               │   ├──ID: y
-    │               │   ├──Type: int
+    │               │   ├──PrimitiveType: int
     │               │   └──Num: 7
     │               ├──If
     │               │   ├──RelOp: >
@@ -36,7 +36,7 @@
     │               └──Break
     └──FuncDecl
         ├──ID: func
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             ├──While
@@ -46,7 +46,7 @@
             │   └──Statements
             │       ├──VarDecl
             │       │   ├──ID: x
-            │       │   ├──Type: int
+            │       │   ├──PrimitiveType: int
             │       │   └──Num: 12
             │       ├──If
             │       │   ├──RelOp: >
@@ -55,7 +55,7 @@
             │       │   └──Break
             │       ├──VarDecl
             │       │   ├──ID: y
-            │       │   ├──Type: int
+            │       │   ├──PrimitiveType: int
             │       │   └──Num: 7
             │       ├──If
             │       │   ├──RelOp: >

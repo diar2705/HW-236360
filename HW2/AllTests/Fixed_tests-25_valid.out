@@ -1,7 +1,7 @@
 └──Funcs
     └──FuncDecl
         ├──ID: continueTest
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             └──While

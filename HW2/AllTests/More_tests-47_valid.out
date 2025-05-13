@@ -1,36 +1,36 @@
 └──Funcs
     ├──FuncDecl
     │   ├──ID: main
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: x
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 10
     │       ├──VarDecl
     │       │   ├──ID: y
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 20
     │       ├──VarDecl
     │       │   ├──ID: z
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 30
     │       ├──VarDecl
     │       │   ├──ID: b1
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 1
     │       ├──VarDecl
     │       │   ├──ID: b2
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 4
     │       ├──VarDecl
     │       │   ├──ID: flag1
-    │       │   ├──Type: bool
+    │       │   ├──PrimitiveType: bool
     │       │   └──Bool: true
     │       ├──VarDecl
     │       │   ├──ID: flag2
-    │       │   ├──Type: bool
+    │       │   ├──PrimitiveType: bool
     │       │   └──Bool: false
     │       ├──If
     │       │   ├──Or
@@ -152,7 +152,7 @@
     │       │                           └──Num: 1
     │       ├──VarDecl
     │       │   ├──ID: result
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Call
     │       │       ├──ID: deepNestedFunction
     │       │       └──ExpList
@@ -228,7 +228,7 @@
     │       │                   └──ID: z
     │       ├──VarDecl
     │       │   ├──ID: i
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       ├──While
     │       │   ├──RelOp: <
@@ -279,14 +279,14 @@
     │           └──Num: 0
     ├──FuncDecl
     │   ├──ID: deepNestedFunction
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──Return
     │           └──Call
@@ -300,14 +300,14 @@
     │                       └──ID: b
     ├──FuncDecl
     │   ├──ID: firstLevel
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: x
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──Return
     │           └──Call
@@ -325,14 +325,14 @@
     │                       └──Num: 2
     ├──FuncDecl
     │   ├──ID: secondLevel
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: q
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: p
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──If
     │           ├──RelOp: >
@@ -377,14 +377,14 @@
     │                                   └──ID: q
     ├──FuncDecl
     │   ├──ID: thirdLevel
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: n
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: m
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──If
     │           ├──RelOp: ==
@@ -445,11 +445,11 @@
     │                                           └──Num: 3
     ├──FuncDecl
     │   ├──ID: recursiveFactorial
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   └──Formal
     │   │       ├──ID: num
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──If
     │           ├──RelOp: ==
@@ -474,21 +474,21 @@
     │                           └──Num: 1
     ├──FuncDecl
     │   ├──ID: precedenceTest
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: z
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: y
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: x
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: result
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──BinOp: -
     │       │       ├──BinOp: +
     │       │       │   ├──BinOp: +
@@ -520,17 +520,17 @@
     │                               └──Num: 2
     ├──FuncDecl
     │   ├──ID: complexLogic
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: c
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──If
     │           ├──And
@@ -589,12 +589,12 @@
     │                           └──ID: c
     ├──FuncDecl
     │   ├──ID: stressTestLoops
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: x
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       └──While
     │           ├──RelOp: <
@@ -603,7 +603,7 @@
     │           └──Statements
     │               ├──VarDecl
     │               │   ├──ID: y
-    │               │   ├──Type: int
+    │               │   ├──PrimitiveType: int
     │               │   └──Num: 0
     │               ├──While
     │               │   ├──RelOp: <
@@ -650,20 +650,20 @@
     │                       └──Num: 1
     ├──FuncDecl
     │   ├──ID: nestedConditions
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: x
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 10
     │       ├──VarDecl
     │       │   ├──ID: y
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 20
     │       ├──VarDecl
     │       │   ├──ID: z
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 30
     │       └──If
     │           ├──RelOp: >
@@ -729,7 +729,7 @@
     │                                   └──ID: y
     ├──FuncDecl
     │   ├──ID: finalTestSuite
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   └──Statements
     │       ├──Call
@@ -758,7 +758,7 @@
     │                       └──Num: 15
     └──FuncDecl
         ├──ID: main
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         └──Statements
             ├──Call

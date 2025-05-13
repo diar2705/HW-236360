@@ -1,7 +1,7 @@
 └──Funcs
     ├──FuncDecl
     │   ├──ID: main
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   └──Statements
     │       ├──Call
@@ -10,35 +10,35 @@
     │       │       └──String: Starting precedence stress test...
     │       ├──VarDecl
     │       │   ├──ID: a
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 10
     │       ├──VarDecl
     │       │   ├──ID: b
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 20
     │       ├──VarDecl
     │       │   ├──ID: c
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 30
     │       ├──VarDecl
     │       │   ├──ID: d
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 40
     │       ├──VarDecl
     │       │   ├──ID: e
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 5
     │       ├──VarDecl
     │       │   ├──ID: f
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 7
     │       ├──VarDecl
     │       │   ├──ID: flag1
-    │       │   ├──Type: bool
+    │       │   ├──PrimitiveType: bool
     │       │   └──Bool: true
     │       ├──VarDecl
     │       │   ├──ID: flag2
-    │       │   ├──Type: bool
+    │       │   ├──PrimitiveType: bool
     │       │   └──Bool: false
     │       ├──Call
     │       │   ├──ID: testArithmeticPrecedence
@@ -79,30 +79,30 @@
     │           └──Num: 0
     ├──FuncDecl
     │   ├──ID: testArithmeticPrecedence
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: f
-    │   │   │   └──Type: byte
+    │   │   │   └──PrimitiveType: byte
     │   │   ├──Formal
     │   │   │   ├──ID: e
-    │   │   │   └──Type: byte
+    │   │   │   └──PrimitiveType: byte
     │   │   ├──Formal
     │   │   │   ├──ID: d
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: c
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: result
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──Num: 0
     │       ├──Assign
     │       │   ├──ID: result
@@ -218,27 +218,27 @@
     │               └──String: Result 7:
     ├──FuncDecl
     │   ├──ID: testLogicalPrecedence
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: c
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: a
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: flag2
-    │   │   │   └──Type: bool
+    │   │   │   └──PrimitiveType: bool
     │   │   └──Formal
     │   │       ├──ID: flag1
-    │   │       └──Type: bool
+    │   │       └──PrimitiveType: bool
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: result
-    │       │   └──Type: bool
+    │       │   └──PrimitiveType: bool
     │       ├──Assign
     │       │   ├──ID: result
     │       │   └──Or
@@ -323,24 +323,24 @@
     │               └──String: Logical Result 5:
     ├──FuncDecl
     │   ├──ID: testRelationalPrecedence
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: d
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: c
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: result
-    │       │   └──Type: bool
+    │       │   └──PrimitiveType: bool
     │       ├──Assign
     │       │   ├──ID: result
     │       │   └──And
@@ -429,39 +429,39 @@
     │               └──String: Relational Result 5:
     └──FuncDecl
         ├──ID: testMixedPrecedence
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         │   ├──Formal
         │   │   ├──ID: flag2
-        │   │   └──Type: bool
+        │   │   └──PrimitiveType: bool
         │   ├──Formal
         │   │   ├──ID: flag1
-        │   │   └──Type: bool
+        │   │   └──PrimitiveType: bool
         │   ├──Formal
         │   │   ├──ID: f
-        │   │   └──Type: byte
+        │   │   └──PrimitiveType: byte
         │   ├──Formal
         │   │   ├──ID: e
-        │   │   └──Type: byte
+        │   │   └──PrimitiveType: byte
         │   ├──Formal
         │   │   ├──ID: d
-        │   │   └──Type: int
+        │   │   └──PrimitiveType: int
         │   ├──Formal
         │   │   ├──ID: c
-        │   │   └──Type: int
+        │   │   └──PrimitiveType: int
         │   ├──Formal
         │   │   ├──ID: b
-        │   │   └──Type: int
+        │   │   └──PrimitiveType: int
         │   └──Formal
         │       ├──ID: a
-        │       └──Type: int
+        │       └──PrimitiveType: int
         └──Statements
             ├──VarDecl
             │   ├──ID: result
-            │   └──Type: int
+            │   └──PrimitiveType: int
             ├──VarDecl
             │   ├──ID: logicalResult
-            │   └──Type: bool
+            │   └──PrimitiveType: bool
             ├──Assign
             │   ├──ID: result
             │   └──BinOp: +

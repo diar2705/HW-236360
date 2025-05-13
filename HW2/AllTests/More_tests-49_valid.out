@@ -1,12 +1,12 @@
 └──Funcs
     ├──FuncDecl
     │   ├──ID: main
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: c
-    │       │   ├──Type: bool
+    │       │   ├──PrimitiveType: bool
     │       │   └──Bool: true
     │       └──If
     │           ├──Not
@@ -14,7 +14,7 @@
     │           ├──Statements
     │           │   ├──VarDecl
     │           │   │   ├──ID: x
-    │           │   │   ├──Type: int
+    │           │   │   ├──PrimitiveType: int
     │           │   │   └──Call
     │           │   │       ├──ID: return6
     │           │   │       └──ExpList
@@ -26,7 +26,7 @@
     │           │       ├──ID: x
     │           │       └──Cast
     │           │           ├──ID: e
-    │           │           └──Type: int
+    │           │           └──PrimitiveType: int
     │           └──If
     │               ├──And
     │               │   ├──Bool: true
@@ -45,14 +45,14 @@
     │               │           └──Statements
     │               │               ├──VarDecl
     │               │               │   ├──ID: b
-    │               │               │   ├──Type: byte
+    │               │               │   ├──PrimitiveType: byte
     │               │               │   └──NumB: 3
     │               │               ├──While
     │               │               │   ├──Bool: false
     │               │               │   └──Statements
     │               │               │       ├──VarDecl
     │               │               │       │   ├──ID: a
-    │               │               │       │   ├──Type: int
+    │               │               │       │   ├──PrimitiveType: int
     │               │               │       │   └──BinOp: +
     │               │               │       │       ├──BinOp: *
     │               │               │       │       │   ├──Num: 2
@@ -66,7 +66,7 @@
     │               │               │       │           └──Num: 4
     │               │               │       ├──VarDecl
     │               │               │       │   ├──ID: result
-    │               │               │       │   ├──Type: int
+    │               │               │       │   ├──PrimitiveType: int
     │               │               │       │   └──Call
     │               │               │       │       ├──ID: existingFunction
     │               │               │       │       └──ExpList
@@ -85,17 +85,17 @@
     │                   └──Bool: false
     └──FuncDecl
         ├──ID: existingFunction
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         │   ├──Formal
         │   │   ├──ID: c
-        │   │   └──Type: bool
+        │   │   └──PrimitiveType: bool
         │   ├──Formal
         │   │   ├──ID: b
-        │   │   └──Type: byte
+        │   │   └──PrimitiveType: byte
         │   └──Formal
         │       ├──ID: a
-        │       └──Type: int
+        │       └──PrimitiveType: int
         └──Statements
             ├──If
             │   ├──Or

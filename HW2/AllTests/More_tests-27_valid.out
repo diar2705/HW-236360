@@ -1,7 +1,7 @@
 └──Funcs
     └──FuncDecl
         ├──ID: callTest
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             └──Call

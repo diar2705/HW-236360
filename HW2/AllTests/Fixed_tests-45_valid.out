@@ -1,12 +1,12 @@
 └──Funcs
     └──FuncDecl
         ├──ID: main
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         └──Statements
             └──VarDecl
                 ├──ID: flag
-                ├──Type: bool
+                ├──PrimitiveType: bool
                 └──RelOp: >=
                     ├──Num: 5
                     └──Num: 3

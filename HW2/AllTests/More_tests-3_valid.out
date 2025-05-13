@@ -1,14 +1,14 @@
 └──Funcs
     ├──FuncDecl
     │   ├──ID: sum
-    │   ├──Type: int
+    │   ├──PrimitiveType: int
     │   ├──Formals
     │   │   ├──Formal
     │   │   │   ├──ID: b
-    │   │   │   └──Type: int
+    │   │   │   └──PrimitiveType: int
     │   │   └──Formal
     │   │       ├──ID: a
-    │   │       └──Type: int
+    │   │       └──PrimitiveType: int
     │   └──Statements
     │       └──Return
     │           └──BinOp: +
@@ -16,7 +16,7 @@
     │               └──ID: b
     └──FuncDecl
         ├──ID: main
-        ├──Type: int
+        ├──PrimitiveType: int
         ├──Formals
         └──Statements
             └──Return

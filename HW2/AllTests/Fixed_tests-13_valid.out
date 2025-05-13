@@ -1,12 +1,12 @@
 └──Funcs
     └──FuncDecl
         ├──ID: test
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         └──Statements
             ├──VarDecl
             │   ├──ID: x
-            │   ├──Type: int
+            │   ├──PrimitiveType: int
             │   └──Num: 10
             └──Assign
                 ├──ID: x

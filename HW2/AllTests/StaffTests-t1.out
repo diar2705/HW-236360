@@ -1,12 +1,12 @@
 └──Funcs
     ├──FuncDecl
     │   ├──ID: main
-    │   ├──Type: void
+    │   ├──PrimitiveType: void
     │   ├──Formals
     │   └──Statements
     │       ├──VarDecl
     │       │   ├──ID: x
-    │       │   ├──Type: int
+    │       │   ├──PrimitiveType: int
     │       │   └──BinOp: *
     │       │       ├──BinOp: +
     │       │       │   ├──Num: 4
@@ -14,7 +14,7 @@
     │       │       └──Num: 12
     │       ├──VarDecl
     │       │   ├──ID: y
-    │       │   ├──Type: byte
+    │       │   ├──PrimitiveType: byte
     │       │   └──NumB: 100
     │       ├──Call
     │       │   ├──ID: printOk
@@ -28,18 +28,18 @@
     │       │               └──Num: 100
     │       └──VarDecl
     │           ├──ID: z
-    │           └──Type: int
+    │           └──PrimitiveType: int
     └──FuncDecl
         ├──ID: printOk
-        ├──Type: void
+        ├──PrimitiveType: void
         ├──Formals
         │   └──Formal
         │       ├──ID: isOk
-        │       └──Type: bool
+        │       └──PrimitiveType: bool
         └──Statements
             ├──VarDecl
             │   ├──ID: i
-            │   ├──Type: int
+            │   ├──PrimitiveType: int
             │   └──Num: 0
             ├──While
             │   ├──RelOp: <
@@ -64,7 +64,7 @@
                 ├──Statements
                 │   ├──VarDecl
                 │   │   ├──ID: x
-                │   │   ├──Type: int
+                │   │   ├──PrimitiveType: int
                 │   │   └──Num: 0
                 │   └──Call
                 │       ├──ID: print
