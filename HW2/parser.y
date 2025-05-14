@@ -35,7 +35,6 @@ extern char* yytext;
 %token CONTINUE
 %token SC
 %token COMMA
-%token LPAREN
 %token RPAREN
 %token LBRACE
 %token RBRACE
@@ -46,15 +45,19 @@ extern char* yytext;
 %token NUM_B
 %token STRING
 
-%left AND
 %left OR
+%left AND
 %right NOT
 %right ASSIGN
-%left RELOP
-%left BINOP
+%left RELOP_LOW
+%left RELOP_HIGH
+%left BINOP_LOW
+%left BINOP_HIGH
 
 %nonassoc IFX
 %nonassoc ELSE
+%nonassoc   ID_AS_VALUE     
+%left       LPAREN
 
 %precedence CASTING
 
@@ -219,14 +222,23 @@ Exp:    LPAREN Exp RPAREN { $$ = $2; }
                 std::dynamic_pointer_cast<ast::Exp>($3)
             );
         }
-|   Exp BINOP Exp { ///////////////////////
+
+|   Exp BINOP_LOW Exp {
             $$ = std::make_shared<ast::BinOp>(
                 std::dynamic_pointer_cast<ast::Exp>($1),
                 std::dynamic_pointer_cast<ast::Exp>($3),
                 std::dynamic_pointer_cast<ast::BinOp>($2)->op
             );
         }
-|   ID { $$ = $1; }
+|    Exp BINOP_HIGH Exp {
+            $$ = std::make_shared<ast::BinOp>(
+                std::dynamic_pointer_cast<ast::Exp>($1),
+                std::dynamic_pointer_cast<ast::Exp>($3),
+                std::dynamic_pointer_cast<ast::BinOp>($2)->op
+            );
+        }
+
+|   ID  %prec ID_AS_VALUE { $$ = $1; }
 |   Call { $$ = $1; }
 |   NUM { $$ = $1; }
 |   NUM_B { $$ = $1; }
@@ -250,13 +262,24 @@ Exp:    LPAREN Exp RPAREN { $$ = $2; }
                 std::dynamic_pointer_cast<ast::Exp>($3)
             );
         }
-|   Exp RELOP Exp { 
+
+
+
+|   Exp RELOP_LOW Exp { 
             $$ = std::make_shared<ast::RelOp>(
                 std::dynamic_pointer_cast<ast::Exp>($1),
                 std::dynamic_pointer_cast<ast::Exp>($3),
                 std::dynamic_pointer_cast<ast::RelOp>($2)->op
             );
         }
+|    Exp RELOP_HIGH Exp { 
+            $$ = std::make_shared<ast::RelOp>(
+                std::dynamic_pointer_cast<ast::Exp>($1),
+                std::dynamic_pointer_cast<ast::Exp>($3),
+                std::dynamic_pointer_cast<ast::RelOp>($2)->op
+            );
+        }
+
 |   LPAREN Type RPAREN Exp %prec CASTING { 
             auto type = std::dynamic_pointer_cast<ast::Type>($2);
             auto primitiveType = std::dynamic_pointer_cast<ast::PrimitiveType>(type);

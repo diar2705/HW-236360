@@ -42,16 +42,16 @@ string          (\"([^\n\r\"\\]|\\[rnt"\\])+\")
 "]"             return RBRACK;
 "="             return ASSIGN;
 
-"=="            { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::EQ); return RELOP; }
-"!="            { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::NE); return RELOP; }
-"<"             { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::LT); return RELOP; }
-">"             { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::GT); return RELOP; }
-"<="            { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::LE); return RELOP; }
-">="            { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::GE); return RELOP; }
-"+"             { yylval = std::make_shared<ast::BinOp>(nullptr, nullptr, ast::BinOpType::ADD); return BINOP; }
-"-"             { yylval = std::make_shared<ast::BinOp>(nullptr, nullptr, ast::BinOpType::SUB); return BINOP; }
-"*"             { yylval = std::make_shared<ast::BinOp>(nullptr, nullptr, ast::BinOpType::MUL); return BINOP; }
-"/"             { yylval = std::make_shared<ast::BinOp>(nullptr, nullptr, ast::BinOpType::DIV); return BINOP; }
+"=="            { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::EQ); return RELOP_LOW; }
+"!="            { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::NE); return RELOP_LOW; }
+"<"             { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::LT); return RELOP_HIGH; }
+">"             { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::GT); return RELOP_HIGH; }
+"<="            { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::LE); return RELOP_HIGH; }
+">="            { yylval = std::make_shared<ast::RelOp>(nullptr, nullptr, ast::RelOpType::GE); return RELOP_HIGH; }
+"+"             { yylval = std::make_shared<ast::BinOp>(nullptr, nullptr, ast::BinOpType::ADD); return BINOP_LOW; }
+"-"             { yylval = std::make_shared<ast::BinOp>(nullptr, nullptr, ast::BinOpType::SUB); return BINOP_LOW; }
+"*"             { yylval = std::make_shared<ast::BinOp>(nullptr, nullptr, ast::BinOpType::MUL); return BINOP_HIGH; }
+"/"             { yylval = std::make_shared<ast::BinOp>(nullptr, nullptr, ast::BinOpType::DIV); return BINOP_HIGH; }
 
 {id}            { yylval = std::make_shared<ast::ID>(yytext); return ID; }
 {number}        { yylval = std::make_shared<ast::Num>(yytext); return NUM; }
