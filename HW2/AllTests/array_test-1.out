@@ -1,0 +1,310 @@
+└──Funcs
+    ├──FuncDecl
+    │   ├──ID: testArrayDeclaration
+    │   ├──PrimitiveType: int
+    │   ├──Formals
+    │   └──Statements
+    │       ├──VarDecl
+    │       │   ├──ID: a
+    │       │   └──ArrayType: int[
+    │       │       ├──Num: 3
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: b
+    │       │   └──ArrayType: int[
+    │       │       ├──ArrayDereference
+    │       │       │   ├──ID: a
+    │       │       │   └──Num: 10
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: c
+    │       │   └──ArrayType: int[
+    │       │       ├──BinOp: +
+    │       │       │   ├──BinOp: +
+    │       │       │   │   ├──ArrayDereference
+    │       │       │   │   │   ├──ID: a
+    │       │       │   │   │   └──Num: 3
+    │       │       │   │   └──Num: 1
+    │       │       │   └──ID: b
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: d
+    │       │   └──ArrayType: int[
+    │       │       ├──ID: a
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: e
+    │       │   └──ArrayType: int[
+    │       │       ├──Call
+    │       │       │   ├──ID: main
+    │       │       │   └──ExpList
+    │       │       │       ├──ID: b
+    │       │       │       └──ID: a
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: f
+    │       │   └──ArrayType: int[
+    │       │       ├──Num: 3
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: g
+    │       │   └──ArrayType: int[
+    │       │       ├──NumB: 11101
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: g
+    │       │   └──ArrayType: int[
+    │       │       ├──String: HI
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: h
+    │       │   └──ArrayType: int[
+    │       │       ├──Bool: true
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: i
+    │       │   └──ArrayType: int[
+    │       │       ├──Bool: false
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: j
+    │       │   └──ArrayType: int[
+    │       │       ├──Not
+    │       │       │   └──ArrayDereference
+    │       │       │       ├──ID: a
+    │       │       │       └──Num: 1
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: k
+    │       │   └──ArrayType: int[
+    │       │       ├──And
+    │       │       │   ├──BinOp: +
+    │       │       │   │   ├──ArrayDereference
+    │       │       │   │   │   ├──ID: a
+    │       │       │   │   │   └──Num: 1
+    │       │       │   │   └──BinOp: *
+    │       │       │   │       ├──ArrayDereference
+    │       │       │   │       │   ├──ID: b
+    │       │       │   │       │   └──Num: 5
+    │       │       │   │       └──Num: 2
+    │       │       │   └──Bool: false
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: l
+    │       │   └──ArrayType: int[
+    │       │       ├──Or
+    │       │       │   ├──Or
+    │       │       │   │   ├──BinOp: +
+    │       │       │   │   │   ├──ArrayDereference
+    │       │       │   │   │   │   ├──ID: a
+    │       │       │   │   │   │   └──Num: 1
+    │       │       │   │   │   └──BinOp: *
+    │       │       │   │   │       ├──ArrayDereference
+    │       │       │   │   │       │   ├──ID: b
+    │       │       │   │   │       │   └──Num: 5
+    │       │       │   │   │       └──Num: 2
+    │       │       │   │   └──Bool: true
+    │       │       │   └──Bool: false
+    │       │       ├──]
+    │       ├──VarDecl
+    │       │   ├──ID: m
+    │       │   └──ArrayType: int[
+    │       │       ├──RelOp: <=
+    │       │       │   ├──BinOp: *
+    │       │       │   │   ├──ArrayDereference
+    │       │       │   │   │   ├──ID: b
+    │       │       │   │   │   └──Num: 5
+    │       │       │   │   └──Num: 2
+    │       │       │   └──Bool: true
+    │       │       ├──]
+    │       └──VarDecl
+    │           ├──ID: o
+    │           └──ArrayType: int[
+    │               ├──Cast
+    │               │   ├──Num: 5
+    │               │   └──PrimitiveType: bool
+    │               ├──]
+    └──FuncDecl
+        ├──ID: testArrayAssignment
+        ├──PrimitiveType: void
+        ├──Formals
+        │   ├──Formal
+        │   │   ├──ID: otherLie
+        │   │   └──PrimitiveType: byte
+        │   └──Formal
+        │       ├──ID: someLie
+        │       └──PrimitiveType: int
+        └──Statements
+            ├──ArrayAssign
+            │   ├──ID: a
+            │   ├──Num: 3
+            │   └──And
+            │       ├──RelOp: >=
+            │       │   ├──ID: someLie
+            │       │   └──Bool: false
+            │       └──ArrayDereference
+            │           ├──ID: a
+            │           └──ID: b
+            ├──ArrayAssign
+            │   ├──ID: b
+            │   ├──ArrayDereference
+            │   │   ├──ID: a
+            │   │   └──Num: 10
+            │   └──And
+            │       ├──Call
+            │       │   ├──ID: test
+            │       │   └──ExpList
+            │       │       ├──Bool: true
+            │       │       └──ID: moreLies
+            │       └──RelOp: !=
+            │           ├──Not
+            │           │   └──ArrayDereference
+            │           │       ├──ID: a
+            │           │       └──Num: 1
+            │           └──ArrayDereference
+            │               ├──ID: b
+            │               └──Cast
+            │                   ├──String: hi
+            │                   └──PrimitiveType: int
+            ├──ArrayAssign
+            │   ├──ID: c
+            │   ├──BinOp: +
+            │   │   ├──BinOp: +
+            │   │   │   ├──ArrayDereference
+            │   │   │   │   ├──ID: a
+            │   │   │   │   └──Num: 3
+            │   │   │   └──Num: 1
+            │   │   └──ID: b
+            │   └──BinOp: -
+            │       ├──BinOp: +
+            │       │   ├──BinOp: +
+            │       │   │   ├──Num: 3
+            │       │   │   └──Num: 2
+            │       │   └──BinOp: /
+            │       │       ├──BinOp: *
+            │       │       │   ├──BinOp: *
+            │       │       │   │   ├──ID: a
+            │       │       │   │   └──ID: lie
+            │       │       │   └──ID: otherLie
+            │       │       └──Num: 0
+            │       └──Num: 1
+            ├──ArrayAssign
+            │   ├──ID: d
+            │   ├──ID: a
+            │   └──RelOp: ==
+            │       ├──ArrayDereference
+            │       │   ├──ID: a
+            │       │   └──Cast
+            │       │       ├──String: no
+            │       │       └──PrimitiveType: bool
+            │       └──Num: 2
+            ├──ArrayAssign
+            │   ├──ID: e
+            │   ├──Call
+            │   │   ├──ID: main
+            │   │   └──ExpList
+            │   │       ├──ID: b
+            │   │       └──ID: a
+            │   └──NumB: 0
+            ├──ArrayAssign
+            │   ├──ID: f
+            │   ├──Num: 3
+            │   └──RelOp: >
+            │       ├──Num: 2
+            │       └──Num: 1
+            ├──ArrayAssign
+            │   ├──ID: g
+            │   ├──NumB: 11101
+            │   └──BinOp: /
+            │       ├──BinOp: *
+            │       │   ├──BinOp: /
+            │       │   │   ├──Num: 2
+            │       │   │   └──Num: 3
+            │       │   └──Num: 1
+            │       └──Num: 0
+            ├──ArrayAssign
+            │   ├──ID: g
+            │   ├──String: HI
+            │   └──Bool: true
+            ├──ArrayAssign
+            │   ├──ID: h
+            │   ├──Bool: true
+            │   └──Bool: false
+            ├──ArrayAssign
+            │   ├──ID: i
+            │   ├──Bool: false
+            │   └──Or
+            │       ├──Num: 1
+            │       └──Num: 2
+            ├──ArrayAssign
+            │   ├──ID: j
+            │   ├──Not
+            │   │   └──ArrayDereference
+            │   │       ├──ID: a
+            │   │       └──Num: 1
+            │   └──Call
+            │       ├──ID: main
+            │       └──ExpList
+            ├──ArrayAssign
+            │   ├──ID: k
+            │   ├──And
+            │   │   ├──BinOp: +
+            │   │   │   ├──ArrayDereference
+            │   │   │   │   ├──ID: a
+            │   │   │   │   └──Num: 1
+            │   │   │   └──BinOp: *
+            │   │   │       ├──ArrayDereference
+            │   │   │       │   ├──ID: b
+            │   │   │       │   └──Num: 5
+            │   │   │       └──Num: 2
+            │   │   └──Bool: false
+            │   └──Not
+            │       └──Call
+            │           ├──ID: main
+            │           └──ExpList
+            ├──ArrayAssign
+            │   ├──ID: l
+            │   ├──Or
+            │   │   ├──Or
+            │   │   │   ├──BinOp: +
+            │   │   │   │   ├──ArrayDereference
+            │   │   │   │   │   ├──ID: a
+            │   │   │   │   │   └──Num: 1
+            │   │   │   │   └──BinOp: *
+            │   │   │   │       ├──ArrayDereference
+            │   │   │   │       │   ├──ID: b
+            │   │   │   │       │   └──Num: 5
+            │   │   │   │       └──Num: 2
+            │   │   │   └──Bool: true
+            │   │   └──Bool: false
+            │   └──Or
+            │       ├──ID: main
+            │       └──Not
+            │           └──Call
+            │               ├──ID: main
+            │               └──ExpList
+            ├──ArrayAssign
+            │   ├──ID: m
+            │   ├──RelOp: <=
+            │   │   ├──BinOp: *
+            │   │   │   ├──ArrayDereference
+            │   │   │   │   ├──ID: b
+            │   │   │   │   └──Num: 5
+            │   │   │   └──Num: 2
+            │   │   └──Bool: true
+            │   └──RelOp: >=
+            │       ├──ID: main
+            │       └──Call
+            │           ├──ID: main
+            │           └──ExpList
+            └──ArrayAssign
+                ├──ID: o
+                ├──Cast
+                │   ├──Num: 5
+                │   └──PrimitiveType: bool
+                └──Cast
+                    ├──Call
+                    │   ├──ID: main
+                    │   └──ExpList
+                    │       └──ID: lies
+                    └──PrimitiveType: byte

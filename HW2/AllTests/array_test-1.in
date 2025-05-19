@@ -1,0 +1,40 @@
+int testArrayDeclaration() {
+    // test derivation rule 19
+    // this is valid because these are all valid derivation of Exp
+    int a[(3)];
+    int b[a[10]];
+    int c[(a[3] + 1) + b];
+    int d[a];
+    int e[main(a, b)];
+    int f[3];
+    int g[11101b];
+    int g["HI"];
+    int h[true];
+    int i[false];
+    int j[not a[1]];
+    int k[(a[1] + b[5] * 2) and false];
+    int l[(a[1] + b[5] * 2) or true or false];
+    int m[(b[5] * 2) <= true];
+    int o[(bool) 5];
+}
+
+void testArrayAssignment(int someLie, byte otherLie) {
+    // test derivation rule 18
+    // this is valid because these are all valid derivation of Exp
+
+    a[(3)] = someLie >= false and a[b];
+    b[a[10]] = (test(moreLies, true) and not a[1] != b[(int) "hi"]);
+    c[(a[3] + 1) + b] = 3 + 2 + a * lie * otherLie / 0 - 1;
+    d[a] = a[(bool) "no"] == 2;
+    e[main(a, b)] = 0b;
+    f[3] = 2 > 1;
+    g[11101b] = 2 / 3 * 1 / 0;
+    g["HI"] = true;
+    h[true] = false;
+    i[false] = 1 or 2;
+    j[not a[1]] = main();
+    k[(a[1] + b[5] * 2) and false] = not main();
+    l[(a[1] + b[5] * 2) or true or false] = main or not main();
+    m[(b[5] * 2) <= true] = main >= main();
+    o[(bool) 5] = (byte) main(lies);
+}
