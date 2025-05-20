@@ -47,12 +47,12 @@ extern char* yytext;
 
 %left OR
 %left AND
-%right NOT
 %right ASSIGN
 %left RELOP_LOW
 %left RELOP_HIGH
 %left BINOP_LOW
 %left BINOP_HIGH
+%right NOT
 
 %nonassoc IFX
 %nonassoc ELSE
