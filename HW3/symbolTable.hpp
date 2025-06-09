@@ -36,7 +36,6 @@ public:
     bool hasReturn() const;
     int getOffset() const;
     BuiltInType getReturnType() const;
-    bool isFormalParameter() const;
     bool isArray() const;
     int getArraySize() const;
 

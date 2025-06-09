@@ -46,11 +46,6 @@ BuiltInType SymbolEntry::getReturnType() const
     return entry_return_type;
 }
 
-bool SymbolEntry::isFormalParameter() const
-{
-    return is_formal_parameter;
-}
-
 bool SymbolEntry::isArray() const
 {
     return is_array;
@@ -287,3 +282,7 @@ void SymbolTable::setOffset(int offset)
 {
     symbolTable_offsets.back() = offset;
 }
+
+SymbolEntry::~SymbolEntry() {}
+Scope::~Scope() {}
+SymbolTable::~SymbolTable() {}

@@ -12,12 +12,19 @@ private:
     SymbolTable symbolTable;
     output::ScopePrinter printer;
     bool inFirstFunction;
+    BuiltInType currentReturnType;
 
 public:
     Analyzer();
     void printOutput();
     void setInFirstFunction(bool val);
     bool getInFirstFunction() const;
+    BuiltInType getCurrentReturnType() const;
+    void setCurrentReturnType(BuiltInType type);
+    const output::ScopePrinter &getPrinter() const
+    {
+        return printer;
+    }
 
     // Visitor methods
     void visit(ast::Num &node) override;

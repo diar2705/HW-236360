@@ -7,7 +7,8 @@
 #include "visitor.hpp"
 #include "nodes.hpp"
 
-namespace output {
+namespace output
+{
     /* Error handling functions */
 
     void errorLex(int lineno);
@@ -41,7 +42,8 @@ namespace output {
     /* ScopePrinter class
      * This class is used to print scopes in a human-readable format.
      */
-    class ScopePrinter {
+    class ScopePrinter
+    {
     private:
         std::stringstream globalsBuffer;
         std::stringstream buffer;
@@ -58,7 +60,7 @@ namespace output {
 
         void emitVar(const std::string &id, const ast::BuiltInType &type, int offset);
 
-        void emitArr(const std::string &id, const ast::BuiltInType &type, int length , int offset );
+        void emitArr(const std::string &id, const ast::BuiltInType &type, int length, int offset);
 
         void emitFunc(const std::string &id, const ast::BuiltInType &returnType,
                       const std::vector<ast::BuiltInType> &paramTypes);
@@ -67,4 +69,4 @@ namespace output {
     };
 }
 
-#endif //OUTPUT_HPP
+#endif // OUTPUT_HPP
