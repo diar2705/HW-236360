@@ -94,7 +94,7 @@ void Analyzer::visit(ast::Num &node)
 
 void Analyzer::visit(ast::NumB &node)
 {
-    if (node.value > 255)
+    if (node.value > 255 || node.value < 0)
     {
         output::errorByteTooLarge(node.line, node.value);
     }
@@ -159,13 +159,10 @@ void Analyzer::visit(ast::BinOp &node)
         }
     }
 
-    if (leftType == ast::BuiltInType::BYTE && rightType == ast::BuiltInType::BYTE)
+    if ((leftType == ast::BuiltInType::INT || leftType == ast::BuiltInType::BYTE) &&
+        (rightType == ast::BuiltInType::INT || rightType == ast::BuiltInType::BYTE))
     {
-        node.type = ast::BuiltInType::BYTE;
-    }
-    else if (leftType == ast::BuiltInType::INT && rightType == ast::BuiltInType::INT)
-    {
-        node.type = ast::BuiltInType::INT;
+        node.type = ast::BuiltInType::INT; // Mixed numeric types are promoted to INT
     }
     else
     {
@@ -299,15 +296,25 @@ void Analyzer::visit(ast::ArrayAssign &node)
     {
         output::errorUndef(node.line, node.id->value);
     }
+
+    auto rhsID = std::dynamic_pointer_cast<ast::ID>(node.exp);
+    if (rhsID)
+    {
+        auto rhsEntry = symbolTable.findEntry(rhsID->value, false);
+        if (rhsEntry && rhsEntry->isArray())
+        {
+            output::errorMismatch(node.line); // RHS is an array → illegal
+        }
+    }
+
     if (!entry->isArray())
     {
         output::errorMismatch(node.line);
     }
     ast::BuiltInType elemType = entry->getType()[0];
-    if (elemType != node.exp->type && elemType != ast::BuiltInType::INT && node.exp->type != ast::BuiltInType::BYTE)
+    if (elemType != node.exp->type && !(elemType == ast::BuiltInType::INT && node.exp->type == ast::BuiltInType::BYTE))
     {
-        // TODO2: check if this is the right error message
-        output::ErrorInvalidAssignArray(node.line, node.id->value);
+        output::errorMismatch(node.line);
     }
 }
 
@@ -362,30 +369,43 @@ void Analyzer::visit(ast::Call &node)
     }
     else
     {
-        // Check each argument type against the expected type
         for (size_t i = 0; i < args.size(); ++i)
         {
-            auto nodeArg = dynamic_pointer_cast<ast::ID>(args[i]);
-            if (nodeArg)
+            ast::BuiltInType actualArgType = args[i]->type;
+            ast::BuiltInType expectedParamType = expArgTypes[i];
+
+            bool mismatch = false;
+
+            // Handle type compatibility: BYTE can be promoted to INT
+            if (expectedParamType == ast::BuiltInType::INT && actualArgType == ast::BuiltInType::BYTE)
             {
-                auto symbolEntry = symbolTable.findEntry(nodeArg->value, false);
-                if (!symbolEntry)
+                mismatch = false; // BYTE to INT is allowed
+            }
+            else if (expectedParamType != actualArgType)
+            {
+                mismatch = true;
+            }
+
+            // Check if an entire array is being passed where a primitive is expected.
+            auto argAsID = std::dynamic_pointer_cast<ast::ID>(args[i]);
+            if (argAsID)
+            {
+                auto symbolEntryForID = symbolTable.findEntry(argAsID->value, false);
+                if (symbolEntryForID && symbolEntryForID->isArray())
                 {
-                    output::errorUndef(node.line, nodeArg->value);
-                }
-                if (symbolEntry->isArray())
-                {
-                    // TODO2: check if this is the right error message
-                    output::errorMismatch(node.line);
+                    mismatch = true;
                 }
             }
-            if (expArgTypes[i] != args[i]->type && expArgTypes[i] != ast::BuiltInType::INT && args[i]->type != ast::BuiltInType::BYTE)
+
+            if (mismatch)
             {
                 auto expectedTypes = builtInTypeToString(expArgTypes);
                 output::errorPrototypeMismatch(node.line, node.func_id->value, expectedTypes);
             }
         }
     }
+    // Set the type of the call node to the function's return type
+    node.type = entry->getReturnType();
 }
 
 void Analyzer::visit(ast::Statements &node)
@@ -448,7 +468,19 @@ void Analyzer::visit(ast::Return &node)
     }
 
     node.exp->accept(*this);
-    if (node.exp->type != currentReturnType && currentReturnType != ast::BuiltInType::INT && node.exp->type != ast::BuiltInType::BYTE)
+    bool mismatch = true;
+
+    if (currentReturnType == ast::BuiltInType::INT &&
+        node.exp->type == ast::BuiltInType::BYTE)
+    {
+        mismatch = false; // BYTE to INT is allowed
+    }
+    else if (node.exp->type == currentReturnType)
+    {
+        mismatch = false;
+    }
+
+    if (mismatch)
     {
         output::errorMismatch(node.line);
     }
@@ -522,8 +554,18 @@ void Analyzer::visit(ast::VarDecl &node)
     {
         node.init_exp->accept(*this);
 
-        // Check if init_exp is just an identifier
         auto initID = std::dynamic_pointer_cast<ast::ID>(node.init_exp);
+        // Check if init_exp is an array
+        if (initID)
+        {
+            auto initEntry = symbolTable.findEntry(initID->value, false);
+            if (initEntry && initEntry->isArray())
+            {
+                output::errorMismatch(node.line);
+            }
+        }
+
+        // Check if init_exp is just an identifier;
         if (initID)
         {
             if (!symbolTable.contains(initID->value, false))
@@ -579,40 +621,71 @@ void Analyzer::visit(ast::VarDecl &node)
 
 void Analyzer::visit(ast::Assign &node)
 {
-    node.id->accept(*this);
     node.exp->accept(*this);
+    ast::BuiltInType rhsType = node.exp->type;
 
-    auto entry = symbolTable.findEntry(node.id->value, false);
+    node.id->accept(*this);
 
-    if (!entry)
+    auto lhsID = std::dynamic_pointer_cast<ast::ID>(node.id);
+    std::shared_ptr<SymbolEntry> lhsEntry = nullptr;
+
+    if (lhsID)
     {
-        if (symbolTable.contains(node.id->value, true))
-        {
-            output::errorDefAsFunc(node.line, node.id->value);
-        }
-
-        output::errorUndef(node.line, node.id->value);
+        lhsEntry = symbolTable.findEntry(lhsID->value, false);
+    }
+    else if (auto lhsArrayDeref = std::dynamic_pointer_cast<ast::ArrayDereference>(node.id))
+    {
+        lhsEntry = symbolTable.findEntry(lhsArrayDeref->id->value, false);
     }
 
-    auto lhsType = entry->getType()[0];
-    auto rhsType = node.exp->type;
-
-    auto rightID = std::dynamic_pointer_cast<ast::ID>(node.exp);
-    if (rightID)
+    if (!lhsEntry)
     {
-        auto rightEntry = symbolTable.findEntry(rightID->value, false);
-        if (rightEntry && rightEntry->isArray())
+        if (lhsID && symbolTable.contains(lhsID->value, true))
+        {
+            output::errorDefAsFunc(node.line, lhsID->value);
+        }
+        else if (lhsID) // If it's an ID and not found as var or func
+        {
+            output::errorUndef(node.line, lhsID->value);
+        }
+        else
+        {
+            // This case might happen if node.id is not an ID or ArrayDereference,
+            output::errorMismatch(node.line); // Generic mismatch as a fallback
+        }
+    }
+
+    ast::BuiltInType lhsResolvedType;
+    if (std::dynamic_pointer_cast<ast::ArrayDereference>(node.id))
+    {
+        lhsResolvedType = node.id->type;
+    }
+    else
+    {
+        // It's a simple ID
+        lhsResolvedType = lhsEntry->getType()[0];
+    }
+
+    // LHS is an array variable itself
+    if (lhsEntry->isArray() && !std::dynamic_pointer_cast<ast::ArrayDereference>(node.id))
+    {
+        output::ErrorInvalidAssignArray(node.line, lhsEntry->getName());
+    }
+
+    // RHS is an array variable being assigned to a primitive LHS
+    auto rhsAsID = std::dynamic_pointer_cast<ast::ID>(node.exp);
+    if (rhsAsID)
+    {
+        auto rhsEntry = symbolTable.findEntry(rhsAsID->value, false);
+        if (rhsEntry && rhsEntry->isArray())
         {
             output::errorMismatch(node.line);
+            return;
         }
     }
 
-    if (entry->isArray())
-    {
-        output::ErrorInvalidAssignArray(node.line, node.id->value);
-    }
-
-    if (lhsType != rhsType && !(lhsType == ast::BuiltInType::INT && rhsType == ast::BuiltInType::BYTE))
+    // BYTE can be implicitly converted to INT. Other types must match exactly.
+    if (lhsResolvedType != rhsType && !(lhsResolvedType == ast::BuiltInType::INT && rhsType == ast::BuiltInType::BYTE))
     {
         output::errorMismatch(node.line);
     }
@@ -676,11 +749,14 @@ void Analyzer::visit(ast::FuncDecl &node)
     //     output::errorDef(node.line, node.id->value);
     // }
 
+    auto funcEntry = symbolTable.findEntry(node.id->value, true);
+    auto expArgTypes = funcEntry->getType();
     auto primReturnType = std::dynamic_pointer_cast<ast::PrimitiveType>(node.return_type);
     if (!primReturnType)
     {
         // TODO2: check if it should be node.return_type->line or node.line
-        output::errorMismatch(node.return_type->line); // function return type must be primitive
+        auto expectedTypes = builtInTypeToString(expArgTypes);
+        output::errorPrototypeMismatch(node.line, node.id->value, expectedTypes); // function return type must be primitive
     }
 
     BuiltInType returnType = primReturnType->type;

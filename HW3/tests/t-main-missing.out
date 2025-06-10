@@ -1,1 +1,1 @@
-Program has no 'void main()' function
+line 1: syntax error

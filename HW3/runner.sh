@@ -1,21 +1,55 @@
+
 #!/bin/bash
 
-FAILED_TESTS=()
+# Compile the project
+make
 
-for in_file in tests/*.in; do
-    test_name=$(basename "$in_file" .in)
-    ./hw3 < "$in_file" > "tests/$test_name.res" 2>&1
-    diff -q "tests/$test_name.res" "tests/$test_name.out" > /dev/null
-    if [ $? -ne 0 ]; then
-        FAILED_TESTS+=("$test_name")
-    fi
+# Exit if compilation fails
+if [ $? -ne 0 ]; then
+    echo "❌ Compilation failed."
+    exit 1
+fi
+
+# Folders containing test files
+TEST_DIRS=("hw3-tests" "tests" "tests2")
+
+# Counters
+PASS=0
+FAIL=0
+
+echo "========================="
+echo "     Running All Tests"
+echo "========================="
+
+for DIR in "${TEST_DIRS[@]}"; do
+    echo ""
+    echo "▶ Directory: $DIR"
+    
+    for IN_FILE in "$DIR"/*.in; do
+        BASENAME=$(basename "$IN_FILE" .in)
+        OUT_FILE="$DIR/$BASENAME.out"
+        RES_FILE="$DIR/$BASENAME.res"
+
+        # Run program and save output to .res file
+        ./hw3 < "$IN_FILE" > "$RES_FILE"
+
+        # Compare result
+        if diff -q "$RES_FILE" "$OUT_FILE" > /dev/null; then
+            echo -e "  ✅ $BASENAME"
+            ((PASS++))
+        else
+            echo -e "  ❌ $BASENAME"
+            ((FAIL++))
+        fi
+    done
 done
 
-if [ ${#FAILED_TESTS[@]} -eq 0 ]; then
-    echo "All tests passed ✅"
-else
-    echo "Failed tests ❌:"
-    for test in "${FAILED_TESTS[@]}"; do
-        echo "$test"
-    done
-fi
+# Final summary
+echo ""
+echo "========================="
+echo "         Summary"
+echo "========================="
+echo -e "✅ Passed: $PASS"
+echo -e "❌ Failed: $FAIL"
+echo "========================="
+
