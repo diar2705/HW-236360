@@ -117,7 +117,15 @@ void Analyzer::visit(ast::ID &node)
     auto symbolEntry = symbolTable.findEntry(node.value, false);
     if (!symbolEntry)
     {
-        output::errorUndef(node.line, node.value);
+        // If not found as variable, check if it's a function
+        if (symbolTable.contains(node.value, true))
+        {
+            output::errorDefAsFunc(node.line, node.value);
+        }
+        else
+        {
+            output::errorUndef(node.line, node.value);
+        }
         return;
     }
     node.type = symbolEntry->getType().empty() ? ast::BuiltInType::VOID : symbolEntry->getType().front();
@@ -159,10 +167,15 @@ void Analyzer::visit(ast::BinOp &node)
         }
     }
 
-    if ((leftType == ast::BuiltInType::INT || leftType == ast::BuiltInType::BYTE) &&
-        (rightType == ast::BuiltInType::INT || rightType == ast::BuiltInType::BYTE))
+    if ((leftType == ast::BuiltInType::INT && rightType == ast::BuiltInType::INT) ||
+        (leftType == ast::BuiltInType::INT && rightType == ast::BuiltInType::BYTE) ||
+        (leftType == ast::BuiltInType::BYTE && rightType == ast::BuiltInType::INT))
     {
-        node.type = ast::BuiltInType::INT; // Mixed numeric types are promoted to INT
+        node.type = ast::BuiltInType::INT;
+    }
+    else if (leftType == ast::BuiltInType::BYTE && rightType == ast::BuiltInType::BYTE)
+    {
+        node.type = ast::BuiltInType::BYTE;
     }
     else
     {
@@ -324,8 +337,8 @@ void Analyzer::visit(ast::Cast &node)
     node.target_type->accept(*this);
     auto expType = node.exp->type;
     auto targetType = node.target_type->type;
-    if (expType != ast::BuiltInType::INT && expType != ast::BuiltInType::BYTE &&
-        targetType != ast::BuiltInType::INT && targetType != ast::BuiltInType::BYTE)
+    if ((expType != ast::BuiltInType::INT && expType != ast::BuiltInType::BYTE) ||
+        (targetType != ast::BuiltInType::INT && targetType != ast::BuiltInType::BYTE))
     {
         output::errorMismatch(node.line);
     }
@@ -345,16 +358,16 @@ void Analyzer::visit(ast::Call &node)
     // node.func_id->accept(*this);
     node.args->accept(*this);
 
-    // Check function existence
-    if (!symbolTable.contains(node.func_id->value, true))
-    {
-        output::errorUndefFunc(node.line, node.func_id->value);
-    }
-
     // If same name is defined as a variable, raise error
     if (symbolTable.contains(node.func_id->value, false))
     {
         output::errorDefAsVar(node.line, node.func_id->value);
+    }
+
+    // Check function existence
+    if (!symbolTable.contains(node.func_id->value, true))
+    {
+        output::errorUndefFunc(node.line, node.func_id->value);
     }
 
     auto entry = symbolTable.findEntry(node.func_id->value, true);
@@ -478,6 +491,17 @@ void Analyzer::visit(ast::Return &node)
     else if (node.exp->type == currentReturnType)
     {
         mismatch = false;
+    }
+
+    // Check if an array is being returned where a primitive type is expected
+    auto returnAsID = std::dynamic_pointer_cast<ast::ID>(node.exp);
+    if (returnAsID)
+    {
+        auto symbolEntryForReturn = symbolTable.findEntry(returnAsID->value, false);
+        if (symbolEntryForReturn && symbolEntryForReturn->isArray())
+        {
+            mismatch = true;
+        }
     }
 
     if (mismatch)
@@ -739,22 +763,13 @@ void Analyzer::visit(ast::Formals &node)
 
 void Analyzer::visit(ast::FuncDecl &node)
 {
-    // node.id->accept(*this);
     node.return_type->accept(*this);
-
-    // Check if the function is already defined
-    // TODO2: check if we to check if the function is defined as a variable
-    // if (symbolTable.contains(node.id->value, true) || symbolTable.contains(node.id->value, false))
-    // {
-    //     output::errorDef(node.line, node.id->value);
-    // }
 
     auto funcEntry = symbolTable.findEntry(node.id->value, true);
     auto expArgTypes = funcEntry->getType();
     auto primReturnType = std::dynamic_pointer_cast<ast::PrimitiveType>(node.return_type);
     if (!primReturnType)
     {
-        // TODO2: check if it should be node.return_type->line or node.line
         auto expectedTypes = builtInTypeToString(expArgTypes);
         output::errorPrototypeMismatch(node.line, node.id->value, expectedTypes); // function return type must be primitive
     }
@@ -766,19 +781,12 @@ void Analyzer::visit(ast::FuncDecl &node)
         auto formalPrimType = std::dynamic_pointer_cast<ast::PrimitiveType>(formal->type);
         if (!formalPrimType)
         {
-            // TODO2: check if it should be formal->line or node.line
             output::errorMismatch(formal->line); // formal parameter must be primitive
         }
         formalTypes.push_back(formalPrimType->type);
     }
 
     const auto &funcName = node.id->value;
-
-    // // Add function to symbol table
-    // symbolTable.addEntry(std::make_shared<SymbolEntry>(
-    //     funcName, formalTypes, true, true, 0, returnType, false, false, 0));
-
-    // printer.emitFunc(funcName, returnType, formalTypes);
 
     // opening a new scope for function body
     symbolTable.beginScope();
@@ -841,13 +849,13 @@ void Analyzer::visit(ast::Funcs &node)
             func->id->value, getFormals(func->formals), true, true, 0, retType->type, false, false, 0));
         printer.emitFunc(func->id->value, retType->type, getFormals(func->formals));
     }
-    for (auto &func : node.funcs)
-    {
-        func->accept(*this);
-    }
     if (!mainFound || !mainValid)
     {
         output::errorMainMissing();
+    }
+    for (auto &func : node.funcs)
+    {
+        func->accept(*this);
     }
     symbolTable.endScope();
 }

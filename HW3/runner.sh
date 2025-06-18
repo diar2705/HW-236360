@@ -94,6 +94,9 @@ fi
 
 # create submission file
 if [ $FAIL -eq 0 ]; then
+    if [ -f submission.zip ]; then
+        rm submission.zip > /dev/null
+    fi
     zip -r submission.zip \
         analyzer.cpp analyzer.hpp \
         main.cpp \
