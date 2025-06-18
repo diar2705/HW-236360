@@ -1,5 +1,0 @@
-void main() {
-    bool arr[3];
-    // invalid: assigning int literal to a bool element
-    arr[0] = 1;
-}

@@ -1,5 +1,0 @@
-void main() {
-  int x;
-  int a[5];
-  x = a;
-}

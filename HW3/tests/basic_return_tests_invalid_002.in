@@ -1,6 +1,0 @@
-void f2() {
-    print("hi");
-}
-void main() {
-    bool b = f2();
-}

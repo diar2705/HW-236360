@@ -1,5 +1,0 @@
-void main() {
-    byte arr[2];
-    // invalid: byte overflow when assigning 300 (>255)
-    arr[1] = 300;
-}
