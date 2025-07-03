@@ -1,3 +1,6 @@
 *.res
 .vscode
 *.result
+*.exe
+*.o
+*.ll

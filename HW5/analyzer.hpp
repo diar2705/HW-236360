@@ -10,7 +10,7 @@ class Analyzer : public Visitor
 {
 private:
     SymbolTable symbolTable;
-    output::ScopePrinter printer;
+    output::CodeBuffer codeBuffer;
     bool inFirstFunction;
     BuiltInType currentReturnType;
 
@@ -21,9 +21,9 @@ public:
     bool getInFirstFunction() const;
     BuiltInType getCurrentReturnType() const;
     void setCurrentReturnType(BuiltInType type);
-    const output::ScopePrinter &getPrinter() const
+    const output::CodeBuffer &getCodeBuffer() const
     {
-        return printer;
+        return codeBuffer;
     }
 
     // Visitor methods

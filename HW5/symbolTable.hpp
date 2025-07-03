@@ -20,13 +20,14 @@ private:
     bool is_formal_parameter;
     bool is_array;
     int array_size;
+    string llvmRig;
 
 public:
     // Constructor for SymbolEntry
     SymbolEntry(string name, vector<BuiltInType> type, bool is_func = false,
                 bool has_return = false, int entry_offset = 0,
                 BuiltInType entry_return_type = BuiltInType::VOID, bool is_formal_parameter = false,
-                bool is_array = false, int array_size = 0);
+                bool is_array = false, int array_size = 0, const string &llvmRig = "");
 
     // Getters for SymbolEntry
     string getName() const;
@@ -38,6 +39,7 @@ public:
     BuiltInType getReturnType() const;
     bool isArray() const;
     int getArraySize() const;
+    string getLlvmRig() const;
 
     // Setters for SymbolEntry
     void setName(const string &name);
@@ -49,6 +51,7 @@ public:
     void setIsFormalParameter(bool is_formal_parameter);
     void setIsArray(bool is_array);
     void setArraySize(int size);
+    void setLlvmRig(const string &llvmRig);
 
     ~SymbolEntry();
 };

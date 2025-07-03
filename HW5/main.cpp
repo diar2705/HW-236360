@@ -16,5 +16,4 @@ int main()
     Analyzer analyzer;
     program->accept(analyzer);
     analyzer.printOutput();
-    // std::cout << analyzer.getPrinter();
 }
